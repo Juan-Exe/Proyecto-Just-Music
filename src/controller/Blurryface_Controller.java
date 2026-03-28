@@ -25,7 +25,7 @@ import javax.swing.JOptionPane;
  *
  * @author DAMIANA
  */
-public class Blurryface_Controller implements Initializable {
+public class Blurryface_Controller implements Initializable, AlbumController {
 
     @FXML
     private Button BT_Heavy;
@@ -203,16 +203,16 @@ public class Blurryface_Controller implements Initializable {
     System.out.println("Boton de pasar cancion presionado");
     if (isRandomMode()) {
         String randomSongPath = getRandomSong();
-        playSong(randomSongPath, mainController_1); 
+        playSong(randomSongPath, mainController, mainController_1);
     } else {
         if (loopMode) {
-            playSong(songsPaths.get(currentSongIndex), mainController_1); 
+            playSong(songsPaths.get(currentSongIndex), mainController, mainController_1);
             return;
         }
-        
+
         currentSongIndex = (currentSongIndex + 1) % songsPaths.size();
         String nextSongPath = songsPaths.get(currentSongIndex);
-        playSong(nextSongPath, mainController_1); 
+        playSong(nextSongPath, mainController, mainController_1);
     }
 }
 
@@ -257,6 +257,12 @@ public class Blurryface_Controller implements Initializable {
 private void playSong(String songPath, viewExampleController mainController) {
     if (mainController.getMediaPlayer() != null) {
         mainController.getMediaPlayer().stop();
+        mainController.getMediaPlayer().dispose();
+        mainController.setMediaPlayer(null);
+    }
+    if (mediaPlayer != null) {
+        mediaPlayer.stop();
+        mediaPlayer.dispose();
     }
     Media media = new Media(new File(songPath).toURI().toString());
     mediaPlayer = new MediaPlayer(media);
@@ -294,6 +300,12 @@ private void playSong(String songPath, viewExampleController mainController) {
 private void playSong(String songPath, viewExampleController_1 mainController_1) {
     if (mainController_1.getMediaPlayer() != null) {
         mainController_1.getMediaPlayer().stop();
+        mainController_1.getMediaPlayer().dispose();
+        mainController_1.setMediaPlayer(null);
+    }
+    if (mediaPlayer != null) {
+        mediaPlayer.stop();
+        mediaPlayer.dispose();
     }
     Media media = new Media(new File(songPath).toURI().toString());
     mediaPlayer = new MediaPlayer(media);
@@ -334,21 +346,21 @@ private void playSong(String songPath, viewExampleController_1 mainController_1)
     public void playPreviousSong() {
     if (isRandomMode()) {
         String randomSongPath = getRandomSong();
-        playSong(randomSongPath, mainController_1);
+        playSong(randomSongPath, mainController, mainController_1);
     } else {
         if (loopMode && currentSongIndex == 0) {
-            playSong(songsPaths.get(currentSongIndex), mainController_1); 
+            playSong(songsPaths.get(currentSongIndex), mainController, mainController_1);
             return;
         }
-        
+
         if (loopMode) {
             currentSongIndex = (currentSongIndex - 1 + songsPaths.size()) % songsPaths.size();
         } else if (currentSongIndex > 0) {
-            currentSongIndex--; 
+            currentSongIndex--;
         }
-        
+
         String previousSongPath = songsPaths.get(currentSongIndex);
-        playSong(previousSongPath, mainController_1); 
+        playSong(previousSongPath, mainController, mainController_1);
     }
 }
     

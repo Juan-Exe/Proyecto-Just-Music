@@ -212,7 +212,9 @@ public class viewExampleController_1 implements Initializable {
     private Down_page DP;
     
     private viewExampleController_1 mainController_1;
-    
+
+    private AlbumController activeAlbumController;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
      
@@ -332,7 +334,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         deftonesController = loader.getController();
         if (deftonesController != null) {
-            deftonesController.setMainController_1(this); 
+            deftonesController.setMainController_1(this);
+            activeAlbumController = deftonesController; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Deftones_White_Pony_Page"); // Agregar esta línea
         } else {
@@ -349,7 +352,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         KNY = loader.getController();
         if (KNY != null) {
-            KNY.setMainController_1(this); 
+            KNY.setMainController_1(this);
+            activeAlbumController = KNY; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Deftones_White_Pony_Page");
         } else {
@@ -366,7 +370,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         deftonesController = loader.getController();
         if (deftonesController != null) {
-            deftonesController.setMainController_1(this); 
+            deftonesController.setMainController_1(this);
+            activeAlbumController = deftonesController; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Deftones_White_Pony_Page"); // Agregar esta línea
         } else {
@@ -386,7 +391,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         thrillerController = loader.getController();
         if (thrillerController != null) {
-            thrillerController.setMainController_1(this); 
+            thrillerController.setMainController_1(this);
+            activeAlbumController = thrillerController; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Thriller_Page"); 
         } else {
@@ -404,7 +410,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         thrillerController = loader.getController();
         if (thrillerController != null) {
-            thrillerController.setMainController_1(this); 
+            thrillerController.setMainController_1(this);
+            activeAlbumController = thrillerController; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Thriller_Page"); 
         } else {
@@ -423,7 +430,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         WDTY_1 = loader.getController();
         if (WDTY_1 != null) {
-            WDTY_1.setMainController_1(this); 
+            WDTY_1.setMainController_1(this);
+            activeAlbumController = WDTY_1; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: WDTY_Page"); 
         } else {
@@ -441,7 +449,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         WDTY_2 = loader.getController();
         if (WDTY_2 != null) {
-            WDTY_2.setMainController_1(this); 
+            WDTY_2.setMainController_1(this);
+            activeAlbumController = WDTY_2; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: WDTY_Page_2"); 
         } else {
@@ -459,7 +468,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         WDTY_1 = loader.getController();
         if (WDTY_1 != null) {
-            WDTY_1.setMainController_1(this); 
+            WDTY_1.setMainController_1(this);
+            activeAlbumController = WDTY_1; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: WDTY_Page_1"); 
         } else {
@@ -477,7 +487,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         Lis = loader.getController();
         if (Lis != null) {
-            Lis.setMainController_1(this); 
+            Lis.setMainController_1(this);
+            activeAlbumController = Lis; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Lisa"); 
         } else {
@@ -513,7 +524,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         test = loader.getController();
         if (test != null) {
-            test.setMainController_1(this); 
+            test.setMainController_1(this);
+            activeAlbumController = test; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Asap"); 
         } else {
@@ -530,7 +542,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         lon = loader.getController();
         if (lon != null) {
-            lon.setMainController_1(this); 
+            lon.setMainController_1(this);
+            activeAlbumController = lon; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Asap"); 
         } else {
@@ -604,7 +617,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         Lat = loader.getController();
         if (Lat != null) {
-            Lat.setMainController_1(this); 
+            Lat.setMainController_1(this);
+            activeAlbumController = Lat; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Asap"); 
         } else {
@@ -623,7 +637,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         dayz = loader.getController();
         if (dayz != null) {
-            dayz.setMainController_1(this); 
+            dayz.setMainController_1(this);
+            activeAlbumController = dayz; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Asap"); 
         } else {
@@ -661,7 +676,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         TGA = loader.getController();
         if (TGA != null) {
-            TGA.setMainController_1(this); 
+            TGA.setMainController_1(this);
+            activeAlbumController = TGA; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Asap"); 
         } else {
@@ -680,7 +696,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         Cali = loader.getController();
         if (Cali != null) {
-            Cali.setMainController_1(this); 
+            Cali.setMainController_1(this);
+            activeAlbumController = Cali; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Asap"); 
         } else {
@@ -739,7 +756,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         trench = loader.getController();
         if (trench != null) {
-            trench.setMainController_1(this); 
+            trench.setMainController_1(this);
+            activeAlbumController = trench; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Asap"); 
         } else {
@@ -758,7 +776,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         Blurry = loader.getController();
         if (Blurry != null) {
-            Blurry.setMainController_1(this); 
+            Blurry.setMainController_1(this);
+            activeAlbumController = Blurry; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Asap"); 
         } else {
@@ -834,7 +853,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         damn = loader.getController();
         if (damn != null) {
-            damn.setMainController_1(this); 
+            damn.setMainController_1(this);
+            activeAlbumController = damn; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Asap"); 
         } else {
@@ -854,7 +874,8 @@ public class viewExampleController_1 implements Initializable {
         Parent root = loader.load();
         mr = loader.getController();
         if (mr != null) {
-            mr.setMainController_1(this); 
+            mr.setMainController_1(this);
+            activeAlbumController = mr; 
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Asap"); 
         } else {
@@ -1038,354 +1059,40 @@ public class viewExampleController_1 implements Initializable {
 
     @FXML
     private void shuffleMedia(ActionEvent event) {
-        
-         if (deftonesController != null) {
-        String randomSong = deftonesController.toggleRandomMode();
-    }
-         if (thrillerController != null) {
-        String randomSong = thrillerController.toggleRandomMode();
-    
-    }
-         
-         if (WDTY_1 != null) {
-        String randomSong = WDTY_1.toggleRandomMode();
-         
-    }
-         if (WDTY_2 != null) {
-        String randomSong = WDTY_2.toggleRandomMode();
-        }
-         
-        if (Lis != null) {
-        String randomSong = Lis.toggleRandomMode();
-        }
-        
-        if (KNY != null) {
-        String randomSong = KNY.toggleRandomMode();
-        }
-        
-        if (damn != null) {
-        String randomSong = damn.toggleRandomMode();
-        }
-        
-        if (mr != null) {
-        String randomSong = mr.toggleRandomMode();
-        }
-        
-        if (trench != null) {
-        String randomSong = trench.toggleRandomMode();
-        }
-        
-        if (Blurry != null) {
-        String randomSong = Blurry.toggleRandomMode();
-        }
-        
-        if (TGA != null) {
-        String randomSong = TGA.toggleRandomMode();
-        }
-        
-        if (Cali != null) {
-        String randomSong = Cali.toggleRandomMode();
-        }
-        
-        if (dayz != null) {
-        String randomSong = dayz.toggleRandomMode();
-        }
-        
-        if (Lat != null) {
-        String randomSong = Lat.toggleRandomMode();
-        }
-        
-        if (test != null) {
-        String randomSong = test.toggleRandomMode();
-        }
-        
-        if (lon != null) {
-        String randomSong = lon.toggleRandomMode();
+        if (activeAlbumController != null) {
+            activeAlbumController.toggleRandomMode();
         }
     }
 
     @FXML
     private void resetMedia(ActionEvent event) {
-        
-         if (deftonesController != null) {
-        deftonesController.playPreviousSong();
-         
+        if (activeAlbumController != null) {
+            activeAlbumController.playPreviousSong();
+        }
     }
-    
-         if (thrillerController != null) {
-        thrillerController.playPreviousSong();
-   
-    }   
-         
-         if (WDTY_1 != null) {
-        WDTY_1.playPreviousSong();
-         }
-    
-        
-        if (WDTY_2 != null) {
-        WDTY_2.playPreviousSong();
-  
-    }
-        if (Lis != null) {
-        Lis.playPreviousSong();
-        } 
-        
-        if (KNY != null) {
-        KNY.playPreviousSong();
-        }
-        
-        if (damn != null) {
-        damn.playPreviousSong();
-        }
-        
-        if (mr != null) {
-        mr.playPreviousSong();
-        }
-        
-        if (trench != null) {
-        trench.playPreviousSong();
-        }
-        
-        if (Blurry != null) {
-        Blurry.playPreviousSong();
-        }
-        
-        if (TGA != null) {
-        TGA.playPreviousSong();
-        }
-        
-        if (Cali != null) {
-        Cali.playPreviousSong();
-        }
-        
-         if (dayz != null) {
-        dayz.playPreviousSong();
-        }
-        
-        if (Lat != null) {
-        Lat.playPreviousSong();
-        }
-        
-        if (test != null) {
-        test.playPreviousSong();
-        }
-        
-        if (lon != null) {
-        lon.playPreviousSong();
-        }
-  
-         
-}
     
     @FXML
     private void play_pauseMedia(ActionEvent event) {
-      
-         if (deftonesController != null) {
-        deftonesController.playOrPause();
-   
-    }
-     
-         if (thrillerController != null) {
-        thrillerController.playOrPause();
-    
-    }
-         
-         if (WDTY_1 != null) {
-        WDTY_1.playOrPause();
-   
-    }
-    
-         if (WDTY_2 != null) {
-        WDTY_2.playOrPause();
-   
-    }
-         if (Lis != null) {
-        Lis.playOrPause();
-        } 
-         
-         if (KNY != null) {
-        KNY.playOrPause();
+        if (mediaPlayer != null) {
+            if (mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
+                mediaPlayer.pause();
+            } else {
+                mediaPlayer.play();
+            }
         }
-         
-        if (damn != null) {
-        damn.playOrPause();
-        }
-        
-        if (mr != null) {
-        mr.playOrPause();
-        }
-        
-        if (trench != null) {
-        trench.playOrPause();
-        }
-        
-        if (Blurry != null) {
-        Blurry.playOrPause();
-        }
-        
-        if (TGA != null) {
-        TGA.playOrPause();
-        }
-        
-        if (Cali != null) {
-        Cali.playOrPause();
-        }
-        
-        if (Lat != null) {
-        Lat.playOrPause();
-        }
-        
-        if (dayz != null) {
-        dayz.playOrPause();
-        }
-        
-        if (test != null) {
-        test.playOrPause();
-        }
-        
-        if (lon != null) {
-        lon.playOrPause();
-        }
-         
 }
 
     @FXML
     private void NextMedia(ActionEvent event) {
-        
-         if (deftonesController != null) {
-        deftonesController.playNextSong();
-   
+        if (activeAlbumController != null) {
+            activeAlbumController.playNextSong();
+        }
     }
-    
-         if (thrillerController != null) {
-        thrillerController.playNextSong();
-    
-    }
-         
-         if (WDTY_1 != null) {
-        WDTY_1.playNextSong();
-
-    }
-         
-         if (WDTY_2 != null) {
-        WDTY_2.playNextSong();
-
-    }
-         if (Lis != null) {
-        Lis.playNextSong();
-        } 
-         
-         if (KNY != null) {
-        KNY.playNextSong();
-        }
-         if (damn != null) {
-        damn.playNextSong();
-        }
-         
-         if (mr != null) {
-        mr.playNextSong();
-        }
-         
-         if (trench != null) {
-        trench.playNextSong();
-        }
-         
-         if (Blurry != null) {
-        Blurry.playNextSong();
-        }
-         
-         if (TGA != null) {
-        TGA.playNextSong();
-        }
-        
-        if (Cali != null) {
-        Cali.playNextSong();
-        }
-        
-        if (Lat != null) {
-        Lat.playNextSong();
-        }
-        
-        if (dayz != null) {
-        dayz.playNextSong();
-        }
-        
-        if (test != null) {
-        test.playNextSong();
-        }
-        
-        if (lon != null) {
-        lon.playNextSong();
-        }
-}
 
     @FXML
     private void bucleMedia(ActionEvent event) {
-        
-         if (deftonesController != null) {
-        deftonesController.toggleLoopMode();
-
-    }
-    
-         if (thrillerController != null) {
-        thrillerController.toggleLoopMode();
- 
-    }
-         
-         if (WDTY_1 != null) {
-        WDTY_1.toggleLoopMode();
-   
-    }
-    
-         if (WDTY_2 != null) {
-        WDTY_2.toggleLoopMode();
-    
-    }
-         if (Lis != null) {
-        Lis.toggleLoopMode();
-        } 
-         if (KNY != null) {
-        KNY.toggleLoopMode();
-        } 
-         
-         if (damn != null) {
-        damn.toggleLoopMode();
-        } 
-         
-         if (mr != null) {
-        mr.toggleLoopMode();
-        }
-         
-         if (trench != null) {
-        trench.toggleLoopMode();
-        }
-         
-         if (Blurry != null) {
-        Blurry.toggleLoopMode();
-        }
-         
-         if (TGA != null) {
-        TGA.toggleLoopMode();
-        }
-        
-        if (Cali != null) {
-        Cali.toggleLoopMode();
-        }
-        
-        if (Lat != null) {
-        Lat.toggleLoopMode();
-        }
-        
-        if (dayz != null) {
-        dayz.toggleLoopMode();
-        }
-        
-        if (test != null) {
-        test.toggleLoopMode();
-        }
-        
-        if (lon != null) {
-        lon.toggleLoopMode();
+        if (activeAlbumController != null) {
+            activeAlbumController.toggleLoopMode();
         }
     }
     
