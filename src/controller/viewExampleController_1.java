@@ -27,6 +27,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.media.Media;
@@ -39,7 +40,7 @@ public class viewExampleController_1 implements Initializable {
     @FXML
      BorderPane bp;
     @FXML
-     AnchorPane ap;
+     ScrollPane ap;
     @FXML
     private Button Bt_albums;
     @FXML
@@ -469,6 +470,7 @@ public class viewExampleController_1 implements Initializable {
     }
     }
     
+    @FXML
     void Lisa_Page(MouseEvent event) {
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Lisa_Page.fxml"));
@@ -504,6 +506,7 @@ public class viewExampleController_1 implements Initializable {
     }
     }
     
+    @FXML
     void Testing(MouseEvent event) {
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Asap_Rocky_Testing.fxml"));
@@ -593,6 +596,7 @@ public class viewExampleController_1 implements Initializable {
     
     }
     
+    @FXML
     void Lateralus(MouseEvent event) {
         
         try {
@@ -728,6 +732,7 @@ public class viewExampleController_1 implements Initializable {
     
     }
     
+    @FXML
     void Trench(MouseEvent event) {
     try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TOP_Trench.fxml"));
@@ -841,7 +846,8 @@ public class viewExampleController_1 implements Initializable {
     }
     
     
-     void Mr_Morale(MouseEvent event) {
+    @FXML
+    void Mr_Morale(MouseEvent event) {
         
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Kendrick_Mr_Morale.fxml"));

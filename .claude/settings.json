@@ -51,7 +51,8 @@
       "Bash(\"C:/Program Files/Java/jdk1.8.0_202/bin/javac\" -encoding UTF-8 -cp \"build/classes;dist/Proyecto Just Music.jar;dist/lib/mysql-connector-j-8.3.0.jar\" -d build/classes src/controller/*.java src/model/*.java src/javafxcontroller/*.java)",
       "Bash(\"C:/Program Files/Java/jdk1.8.0_202/bin/javac\" -encoding UTF-8 -cp \"build/classes;dist/Proyecto Just Music.jar;dist/lib/mysql-connector-j-8.3.0.jar\" -d build/classes src/model/DBUtils.java src/model/DBUtils_Artista.java)",
       "Bash(docker-compose up:*)",
-      "Bash(\"C:/Program Files/Java/jdk1.8.0_202/bin/javac\" -encoding UTF-8 -cp \"build/classes;dist/Proyecto Just Music.jar;dist/lib/mysql-connector-j-8.3.0.jar\" -d build/classes src/controller/viewExampleController.java src/model/DBUtils.java src/model/DBUtils_Artista.java)"
+      "Bash(\"C:/Program Files/Java/jdk1.8.0_202/bin/javac\" -encoding UTF-8 -cp \"build/classes;dist/Proyecto Just Music.jar;dist/lib/mysql-connector-j-8.3.0.jar\" -d build/classes src/controller/viewExampleController.java src/model/DBUtils.java src/model/DBUtils_Artista.java)",
+      "Bash(\"C:/Program Files/Java/jdk1.8.0_202/bin/javac\" -encoding UTF-8 -cp \"build/classes;dist/Proyecto Just Music.jar;dist/lib/mysql-connector-j-8.3.0.jar\" -d build/classes src/controller/viewExampleController.java src/controller/viewExampleController_1.java)"
     ],
     "additionalDirectories": [
       "c:\\Users\\juand\\Documents\\JUAN DIEGO\\PROYECTOS\\Just Music\\Proyecto-Just-Music\\src\\view"

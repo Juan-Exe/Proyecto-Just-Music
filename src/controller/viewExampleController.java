@@ -26,6 +26,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.media.Media;
@@ -141,7 +142,7 @@ public class viewExampleController implements Initializable {
     public BorderPane bp;
 
     @FXML
-     AnchorPane ap;
+     ScrollPane ap;
     
     @FXML
     private Button shuffleButton;
@@ -454,6 +455,7 @@ private void Deftones_White_Pony_Page(MouseEvent event) {
     }
     }
     
+    @FXML
     void Lisa_Page(MouseEvent event) {
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Lisa_Page.fxml"));
@@ -491,7 +493,8 @@ private void Deftones_White_Pony_Page(MouseEvent event) {
     }
     }
     
-        void Testing(MouseEvent event) {
+    @FXML
+    void Testing(MouseEvent event) {
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Asap_Rocky_Testing.fxml"));
         Parent root = loader.load();
@@ -563,7 +566,8 @@ private void Deftones_White_Pony_Page(MouseEvent event) {
     
     }
     
-        void Lateralus(MouseEvent event) {
+    @FXML
+    void Lateralus(MouseEvent event) {
         
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Tool_Lateralus.fxml"));
@@ -716,6 +720,7 @@ private void Deftones_White_Pony_Page(MouseEvent event) {
     
     }
     
+    @FXML
     void Trench(MouseEvent event) {
     try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TOP_Trench.fxml"));
@@ -828,6 +833,7 @@ private void Deftones_White_Pony_Page(MouseEvent event) {
     }
     }
 
+    @FXML
     void Mr_Morale(MouseEvent event) {
         
         try {

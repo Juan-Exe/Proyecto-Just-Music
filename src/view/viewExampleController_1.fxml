@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -21,243 +22,173 @@
             <VBox prefHeight="642.0" prefWidth="331.0" BorderPane.alignment="CENTER" />
          </left>
          <center>
-            <AnchorPane fx:id="ap" prefHeight="726.0" prefWidth="1021.0" style="-fx-background-color: #F6F6F6;" BorderPane.alignment="CENTER">
-               <children>
-                  <Line endX="683.5" layoutX="279.0" layoutY="79.0" startX="-204.0" stroke="#05b2a8" strokeWidth="3.0" />
-                  <Label layoutX="71.0" layoutY="10.0" text="Inicio">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="50.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="10.0" text="Inicio">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="50.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="10.0" text="Inicio">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="50.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="91.0" text="Tendecias destacadas para ti">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="91.0" text="Tendecias destacadas para ti">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="91.0" text="Tendecias destacadas para ti">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="124.0" text="Imprecidibles para ti" textFill="#5e5858">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="20.0" />
-                     </font>
-                  </Label>
-                  <Pane layoutX="71.0" layoutY="162.0" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: #0D2C68; -fx-background-radius: 10;" />
-                  <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="71.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Deftones.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="71.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Deftones%202.png" />
-                     </image>
-                  </ImageView>
-                  <Button layoutX="71.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#Deftones_White_Pony_Page" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: transparent;">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Label layoutX="176.0" layoutY="443.0" text="White Pony" textFill="WHITE">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="182.0" layoutY="459.0" text="Deftones" textFill="WHITE">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="193.0" layoutY="476.0" text="2000" textFill="WHITE">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="12.0" />
-                     </font>
-                  </Label>
-                  <Pane layoutX="692.0" layoutY="162.0" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" />
-                  <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="692.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Thriller.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="692.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Thriller_2.png" />
-                     </image>
-                  </ImageView>
-                  <Button layoutX="692.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#Thriller_Page" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: transparent;">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Label layoutX="809.0" layoutY="443.0" text="Thriller" textFill="WHITE">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="783.0" layoutY="459.0" text="Michael Jackson" textFill="WHITE">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="814.0" layoutY="476.0" text="1982" textFill="WHITE">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="12.0" />
-                     </font>
-                  </Label>
-                  <Pane layoutX="382.0" layoutY="162.0" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: #363636; -fx-background-radius: 10;" />
-                  <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="382.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@WDTY.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="382.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@WDTY_2.png" />
-                     </image>
-                  </ImageView>
-                  <Button layoutX="382.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#WDTY_Page" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: transparent;">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Label layoutX="456.0" layoutY="443.0" text="   We Don't Trust You  " textFill="WHITE">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="456.0" layoutY="459.0" text="Future &amp; Metro Boomin" textFill="WHITE">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="504.0" layoutY="476.0" text="2024" textFill="WHITE">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="521.0" text="Artistas Destacados">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="521.0" text="Artistas Destacados">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="25.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="71.0" layoutY="521.0" text="Artistas Destacados">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="25.0" />
-                     </font>
-                  </Label>
-                  <HBox layoutX="71.0" layoutY="562.0" prefHeight="133.0" prefWidth="862.0" spacing="1.0">
-                     <children>
-                        <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#A$AP_Page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
-                           <graphic>
-                              <ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@ASAP.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#TOOL_page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
-                           <graphic>
-                              <ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@Tool.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#RHCP_Page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
-                           <graphic>
-                              <ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@RHCPP.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#TOP_page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
-                           <graphic>
-                              <ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@TOP.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#Kedrick_page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
-                           <graphic>
-                              <ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@Kedrick.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                        <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#Deftones_page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
-                           <graphic>
-                              <ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@DT.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="1012.0" layoutY="593.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@ABAJO.png" />
-                     </image>
-                  </ImageView>
-                  <Button layoutX="1011.0" layoutY="590.0" mnemonicParsing="false" onMouseClicked="#Down_page" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: transparent;">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-               </children>
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </AnchorPane>
+            <ScrollPane fx:id="ap" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS" style="-fx-background-color: #F6F6F6;" stylesheets="@scrollbar.css" BorderPane.alignment="CENTER">
+               <content>
+                  <VBox style="-fx-background-color: #F6F6F6;" spacing="0">
+                     <!-- Sección 1: Tendencias -->
+                     <AnchorPane prefHeight="530.0" prefWidth="1021.0" style="-fx-background-color: #F6F6F6;">
+                        <children>
+                           <Line endX="683.5" layoutX="279.0" layoutY="79.0" startX="-204.0" stroke="#05b2a8" strokeWidth="3.0" />
+                           <Label layoutX="71.0" layoutY="10.0" text="Inicio">
+                              <font><Font name="Microsoft Sans Serif" size="50.0" /></font>
+                           </Label>
+                           <Label layoutX="71.0" layoutY="91.0" text="Tendencias destacadas para ti">
+                              <font><Font name="Microsoft Sans Serif" size="25.0" /></font>
+                           </Label>
+                           <Label layoutX="71.0" layoutY="124.0" text="Imprecidibles para ti" textFill="#5e5858">
+                              <font><Font name="Microsoft Sans Serif" size="20.0" /></font>
+                           </Label>
+                           <Pane layoutX="71.0" layoutY="162.0" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: #0D2C68; -fx-background-radius: 10;" />
+                           <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="71.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+                              <image><Image url="@Deftones.png" /></image>
+                           </ImageView>
+                           <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="71.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+                              <image><Image url="@Deftones%202.png" /></image>
+                           </ImageView>
+                           <Button layoutX="71.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#Deftones_White_Pony_Page" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: transparent;">
+                              <cursor><Cursor fx:constant="HAND" /></cursor>
+                           </Button>
+                           <Label layoutX="176.0" layoutY="443.0" text="White Pony" textFill="WHITE">
+                              <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
+                           </Label>
+                           <Label layoutX="182.0" layoutY="459.0" text="Deftones" textFill="WHITE">
+                              <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
+                           </Label>
+                           <Label layoutX="193.0" layoutY="476.0" text="2000" textFill="WHITE">
+                              <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
+                           </Label>
+                           <Pane layoutX="692.0" layoutY="162.0" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" />
+                           <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="692.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+                              <image><Image url="@Thriller.png" /></image>
+                           </ImageView>
+                           <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="692.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+                              <image><Image url="@Thriller_2.png" /></image>
+                           </ImageView>
+                           <Button layoutX="692.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#Thriller_Page" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: transparent;">
+                              <cursor><Cursor fx:constant="HAND" /></cursor>
+                           </Button>
+                           <Label layoutX="809.0" layoutY="443.0" text="Thriller" textFill="WHITE">
+                              <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
+                           </Label>
+                           <Label layoutX="783.0" layoutY="459.0" text="Michael Jackson" textFill="WHITE">
+                              <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
+                           </Label>
+                           <Label layoutX="814.0" layoutY="476.0" text="1982" textFill="WHITE">
+                              <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
+                           </Label>
+                           <Pane layoutX="382.0" layoutY="162.0" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: #363636; -fx-background-radius: 10;" />
+                           <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="382.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+                              <image><Image url="@WDTY.png" /></image>
+                           </ImageView>
+                           <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="382.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+                              <image><Image url="@WDTY_2.png" /></image>
+                           </ImageView>
+                           <Button layoutX="382.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#WDTY_Page" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: transparent;">
+                              <cursor><Cursor fx:constant="HAND" /></cursor>
+                           </Button>
+                           <Label layoutX="456.0" layoutY="443.0" text="   We Don't Trust You  " textFill="WHITE">
+                              <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
+                           </Label>
+                           <Label layoutX="456.0" layoutY="459.0" text="Future &amp; Metro Boomin" textFill="WHITE">
+                              <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
+                           </Label>
+                           <Label layoutX="504.0" layoutY="476.0" text="2024" textFill="WHITE">
+                              <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
+                           </Label>
+                        </children>
+                     </AnchorPane>
+                     <!-- Sección 2: Artistas Destacados -->
+                     <AnchorPane prefHeight="230.0" prefWidth="1021.0" style="-fx-background-color: #F6F6F6;">
+                        <children>
+                           <Label layoutX="71.0" layoutY="10.0" text="Artistas Destacados">
+                              <font><Font name="Microsoft Sans Serif" size="25.0" /></font>
+                           </Label>
+                           <HBox layoutX="65.0" layoutY="50.0" prefHeight="133.0" prefWidth="862.0" spacing="1.0">
+                              <children>
+                                 <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#A$AP_Page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
+                                    <graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@ASAP.png" /></image></ImageView></graphic>
+                                    <cursor><Cursor fx:constant="HAND" /></cursor>
+                                 </Button>
+                                 <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#TOOL_page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
+                                    <graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@Tool.png" /></image></ImageView></graphic>
+                                    <cursor><Cursor fx:constant="HAND" /></cursor>
+                                 </Button>
+                                 <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#RHCP_Page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
+                                    <graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@RHCPP.png" /></image></ImageView></graphic>
+                                    <cursor><Cursor fx:constant="HAND" /></cursor>
+                                 </Button>
+                                 <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#TOP_page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
+                                    <graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@TOP.png" /></image></ImageView></graphic>
+                                    <cursor><Cursor fx:constant="HAND" /></cursor>
+                                 </Button>
+                                 <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#Kedrick_page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
+                                    <graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@Kedrick.png" /></image></ImageView></graphic>
+                                    <cursor><Cursor fx:constant="HAND" /></cursor>
+                                 </Button>
+                                 <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#Deftones_page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
+                                    <graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@DT.png" /></image></ImageView></graphic>
+                                    <cursor><Cursor fx:constant="HAND" /></cursor>
+                                 </Button>
+                              </children>
+                           </HBox>
+                           <Label alignment="TOP_CENTER" layoutX="65.0" layoutY="188.0" prefWidth="133.0" text="A$AP Rocky"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                           <Label alignment="TOP_CENTER" layoutX="200.0" layoutY="188.0" prefWidth="133.0" text="Tool"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                           <Label alignment="TOP_CENTER" layoutX="335.0" layoutY="188.0" prefWidth="133.0" text="Red Hot Chilly Peppers"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                           <Label alignment="TOP_CENTER" layoutX="470.0" layoutY="188.0" prefWidth="133.0" text="Twenty One Pilots"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                           <Label alignment="TOP_CENTER" layoutX="605.0" layoutY="188.0" prefWidth="133.0" text="Kendrick Lamar"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                           <Label alignment="TOP_CENTER" layoutX="740.0" layoutY="188.0" prefWidth="133.0" text="Deftones"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                        </children>
+                     </AnchorPane>
+                     <!-- Sección 3: Álbumes Destacados -->
+                     <AnchorPane prefHeight="230.0" prefWidth="1021.0" style="-fx-background-color: #F6F6F6;">
+                        <children>
+                           <Label layoutX="71.0" layoutY="10.0" text="Albumes Destacados">
+                              <font><Font name="Microsoft Sans Serif" size="25.0" /></font>
+                           </Label>
+                           <HBox layoutX="67.0" layoutY="40.0" prefHeight="157.0" prefWidth="899.0" spacing="11.0">
+                              <children>
+                                 <Button mnemonicParsing="false" onMouseClicked="#Testing" prefHeight="157.0" prefWidth="165.0" style="-fx-background-color: TRANSPARENT;">
+                                    <graphic><ImageView fitHeight="157.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@Testing.png" /></image></ImageView></graphic>
+                                    <cursor><Cursor fx:constant="HAND" /></cursor>
+                                 </Button>
+                                 <Button mnemonicParsing="false" onMouseClicked="#Lateralus" prefHeight="157.0" prefWidth="165.0" style="-fx-background-color: TRANSPARENT;">
+                                    <graphic><ImageView fitHeight="157.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@Lateralus.png" /></image></ImageView></graphic>
+                                    <cursor><Cursor fx:constant="HAND" /></cursor>
+                                 </Button>
+                                 <Button mnemonicParsing="false" onMouseClicked="#Mr_Morale" prefHeight="157.0" prefWidth="165.0" style="-fx-background-color: TRANSPARENT;">
+                                    <graphic><ImageView fitHeight="157.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@Mt%20morale.png" /></image></ImageView></graphic>
+                                    <cursor><Cursor fx:constant="HAND" /></cursor>
+                                 </Button>
+                                 <Button mnemonicParsing="false" onMouseClicked="#Trench" prefHeight="157.0" prefWidth="165.0" style="-fx-background-color: TRANSPARENT;">
+                                    <graphic><ImageView fitHeight="157.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@Trench.png" /></image></ImageView></graphic>
+                                    <cursor><Cursor fx:constant="HAND" /></cursor>
+                                 </Button>
+                              </children>
+                           </HBox>
+                           <Label alignment="TOP_CENTER" layoutX="86.0" layoutY="202.0" prefWidth="133.0" text="A$AP Rocky - Testing"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                           <Label alignment="TOP_CENTER" layoutX="271.0" layoutY="202.0" prefWidth="133.0" text="Tool - Lateralus"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                           <Label alignment="TOP_CENTER" layoutX="446.0" layoutY="202.0" prefWidth="149.0" text="Kendrick Lamar - Mt Moral"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                           <Label alignment="TOP_CENTER" layoutX="630.0" layoutY="202.0" prefWidth="149.0" text="Twenty One Pilots - Trench"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                        </children>
+                     </AnchorPane>
+                     <!-- Sección 4: Just Creators -->
+                     <AnchorPane prefHeight="230.0" prefWidth="1021.0" style="-fx-background-color: #F6F6F6;">
+                        <children>
+                           <Label layoutX="71.0" layoutY="10.0" text="Just Creators">
+                              <font><Font name="Microsoft Sans Serif" size="25.0" /></font>
+                           </Label>
+                           <ImageView fitHeight="157.0" fitWidth="165.0" layoutX="74.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                              <image><Image url="@Lisa%20Medium.png" /></image>
+                           </ImageView>
+                           <Button layoutX="67.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#Lisa_Page" prefHeight="157.0" prefWidth="165.0" style="-fx-background-color: TRANSPARENT;">
+                              <cursor><Cursor fx:constant="HAND" /></cursor>
+                           </Button>
+                           <Label alignment="TOP_CENTER" layoutX="85.0" layoutY="202.0" prefWidth="133.0" text="S_C_O_O_T_0_5 - Lisa"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                        </children>
+                     </AnchorPane>
+                  </VBox>
+               </content>
+            </ScrollPane>
          </center>
          <top>
             <Pane prefHeight="82.0" prefWidth="1366.0" BorderPane.alignment="CENTER" />
