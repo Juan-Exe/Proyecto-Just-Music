@@ -35,7 +35,7 @@ public class DBUtils {
         ResultSet resultSet = null; 
         
         try{
-            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/inicio_sesion", "root", "123456" );
+            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/just_music", "just_music_user", "justmusic2024" );
             psCheckUserExists = connection.prepareStatement("SELECT * FROM users WHERE correo = ?");
             psCheckUserExists.setString(1, correo);
             resultSet = psCheckUserExists.executeQuery();
@@ -112,7 +112,7 @@ public class DBUtils {
         ResultSet resultSet = null; 
         
         try{
-        connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/inicio_sesion", "root", "123456" );
+        connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/just_music", "just_music_user", "justmusic2024" );
         preparedStatement = connection.prepareStatement("SELECT contraseña FROM users WHERE correo = ?");
         preparedStatement.setString(1, correo);
         resultSet = preparedStatement.executeQuery();

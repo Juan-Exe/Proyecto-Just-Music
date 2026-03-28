@@ -1431,7 +1431,9 @@ private void Deftones_White_Pony_Page(MouseEvent event) {
              stage.show();
              Stage currentStage = (Stage) Sing_in_Button.getScene().getWindow();
              currentStage.close();
-             getMediaPlayer().stop();
+             if (getMediaPlayer() != null) {
+                 getMediaPlayer().stop();
+             }
     }
     
     public MediaPlayer getMediaPlayer() {

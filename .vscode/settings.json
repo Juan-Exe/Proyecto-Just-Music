@@ -1,0 +1,19 @@
+{
+    "java.jdt.ls.java.home": "C:\\Program Files\\Java\\jdk1.8.0_202",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-1.8",
+            "path": "C:\\Program Files\\Java\\jdk1.8.0_202",
+            "default": true
+        }
+    ],
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "build/classes",
+    "java.project.referencedLibraries": [
+        "dist/lib/mysql-connector-j-8.3.0.jar",
+        "C:\\Program Files\\Java\\jdk1.8.0_202\\jre\\lib\\javaws.jar",
+        "C:\\Program Files\\Java\\jdk1.8.0_202\\jre\\lib\\deploy.jar",
+        "C:\\Program Files\\Java\\jdk1.8.0_202\\jre\\lib\\plugin.jar"
+    ],
+    "java.compile.nullAnalysis.mode": "disabled"
+}

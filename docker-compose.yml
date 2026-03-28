@@ -1,0 +1,21 @@
+services:
+  mariadb:
+    image: mariadb:10.11
+    container_name: just-music-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_DATABASE: just_music
+      MYSQL_USER: just_music_user
+      MYSQL_PASSWORD: justmusic2024
+      MYSQL_CHARACTER_SET_SERVER: utf8mb4
+      MYSQL_COLLATION_SERVER: utf8mb4_general_ci
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./docker/init:/docker-entrypoint-initdb.d
+      - just-music-data:/var/lib/mysql
+
+volumes:
+  just-music-data:

@@ -1,0 +1,68 @@
+/* Scrollbar minimalista con colores Just Music */
+
+.scroll-pane > .viewport {
+    -fx-background-color: #F6F6F6;
+}
+
+.scroll-pane {
+    -fx-background-color: #F6F6F6;
+    -fx-background: #F6F6F6;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* Track del scrollbar (fondo) */
+.scroll-bar:vertical .track {
+    -fx-background-color: #E8F9F8;
+    -fx-border-color: transparent;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+}
+
+/* Thumb (el indicador que se arrastra) */
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #05B2A8;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #04938B;
+}
+
+.scroll-bar:vertical .thumb:pressed {
+    -fx-background-color: #037870;
+}
+
+/* Botones de flecha (ocultarlos para look minimalista) */
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow {
+    -fx-shape: "";
+    -fx-padding: 0;
+}
+
+/* Ancho del scrollbar */
+.scroll-bar:vertical {
+    -fx-pref-width: 8px;
+    -fx-background-color: #E8F9F8;
+    -fx-background-radius: 4px;
+    -fx-padding: 0;
+}
+
+/* Asegurar visibilidad del scroll pane corner */
+.scroll-pane .corner {
+    -fx-background-color: #F6F6F6;
+}

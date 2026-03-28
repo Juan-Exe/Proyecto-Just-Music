@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Proyecto Just Music",
+            "request": "launch",
+            "mainClass": "javafxcontroller.ProyectoJustMusic",
+            "classPaths": [
+                "${workspaceFolder}/build/classes",
+                "${workspaceFolder}/dist/lib/mysql-connector-j-8.3.0.jar",
+                "C:\\Program Files\\Java\\jdk1.8.0_202\\jre\\lib\\javaws.jar",
+                "C:\\Program Files\\Java\\jdk1.8.0_202\\jre\\lib\\deploy.jar",
+                "C:\\Program Files\\Java\\jdk1.8.0_202\\jre\\lib\\plugin.jar"
+            ],
+            "javaExec": "C:\\Program Files\\Java\\jdk1.8.0_202\\bin\\java.exe",
+            "vmArgs": "-Dfile.encoding=UTF-8"
+        }
+    ]
+}
