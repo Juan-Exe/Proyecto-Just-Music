@@ -45,16 +45,16 @@
                            <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="71.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
                               <image><Image url="@Deftones%202.png" /></image>
                            </ImageView>
-                           <Button layoutX="71.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#Deftones_White_Pony_Page" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: transparent;">
+                           <Button layoutX="71.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#Deftones_White_Pony_Page" prefHeight="339.0" prefWidth="271.0" focusTraversable="false" styleClass="album-btn" style="-fx-background-color: transparent; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;">
                               <cursor><Cursor fx:constant="HAND" /></cursor>
                            </Button>
-                           <Label layoutX="176.0" layoutY="443.0" text="White Pony" textFill="WHITE">
+                           <Label layoutX="176.0" layoutY="443.0" text="White Pony" style="-fx-text-fill: white !important;">
                               <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
                            </Label>
-                           <Label layoutX="182.0" layoutY="459.0" text="Deftones" textFill="WHITE">
+                           <Label layoutX="182.0" layoutY="459.0" text="Deftones" style="-fx-text-fill: white !important;">
                               <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
                            </Label>
-                           <Label layoutX="193.0" layoutY="476.0" text="2000" textFill="WHITE">
+                           <Label layoutX="193.0" layoutY="476.0" text="2000" style="-fx-text-fill: white !important;">
                               <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
                            </Label>
                            <Pane layoutX="692.0" layoutY="162.0" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: #000000; -fx-background-radius: 10;" />
@@ -64,16 +64,16 @@
                            <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="692.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
                               <image><Image url="@Thriller_2.png" /></image>
                            </ImageView>
-                           <Button layoutX="692.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#Thriller_Page" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: transparent;">
+                           <Button layoutX="692.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#Thriller_Page" prefHeight="339.0" prefWidth="271.0" focusTraversable="false" styleClass="album-btn" style="-fx-background-color: transparent; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;">
                               <cursor><Cursor fx:constant="HAND" /></cursor>
                            </Button>
-                           <Label layoutX="809.0" layoutY="443.0" text="Thriller" textFill="WHITE">
+                           <Label layoutX="809.0" layoutY="443.0" text="Thriller" style="-fx-text-fill: white !important;">
                               <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
                            </Label>
-                           <Label layoutX="783.0" layoutY="459.0" text="Michael Jackson" textFill="WHITE">
+                           <Label layoutX="783.0" layoutY="459.0" text="Michael Jackson" style="-fx-text-fill: white !important;">
                               <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
                            </Label>
-                           <Label layoutX="814.0" layoutY="476.0" text="1982" textFill="WHITE">
+                           <Label layoutX="814.0" layoutY="476.0" text="1982" style="-fx-text-fill: white !important;">
                               <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
                            </Label>
                            <Pane layoutX="382.0" layoutY="162.0" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: #363636; -fx-background-radius: 10;" />
@@ -83,16 +83,16 @@
                            <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="382.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
                               <image><Image url="@WDTY_2.png" /></image>
                            </ImageView>
-                           <Button layoutX="382.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#WDTY_Page" prefHeight="339.0" prefWidth="271.0" style="-fx-background-color: transparent;">
+                           <Button layoutX="382.0" layoutY="162.0" mnemonicParsing="false" onMouseClicked="#WDTY_Page" prefHeight="339.0" prefWidth="271.0" focusTraversable="false" styleClass="album-btn" style="-fx-background-color: transparent; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;">
                               <cursor><Cursor fx:constant="HAND" /></cursor>
                            </Button>
-                           <Label layoutX="456.0" layoutY="443.0" text="   We Don't Trust You  " textFill="WHITE">
+                           <Label layoutX="456.0" layoutY="443.0" text="   We Don't Trust You  " style="-fx-text-fill: white !important;">
                               <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
                            </Label>
-                           <Label layoutX="456.0" layoutY="459.0" text="Future &amp; Metro Boomin" textFill="WHITE">
+                           <Label layoutX="456.0" layoutY="459.0" text="Future &amp; Metro Boomin" style="-fx-text-fill: white !important;">
                               <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
                            </Label>
-                           <Label layoutX="504.0" layoutY="476.0" text="2024" textFill="WHITE">
+                           <Label layoutX="504.0" layoutY="476.0" text="2024" style="-fx-text-fill: white !important;">
                               <font><Font name="Microsoft Sans Serif" size="12.0" /></font>
                            </Label>
                         </children>

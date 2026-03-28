@@ -12,6 +12,7 @@ import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -150,9 +151,9 @@ public class viewExampleController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
 //INICIALIZAR VOLUMESLIDER......................................................
-        
+
           volumeSlider.valueProperty().addListener(new ChangeListener<Number>() {
 
         @Override
@@ -163,6 +164,8 @@ public class viewExampleController implements Initializable {
             }
         }
     });
+
+        Platform.runLater(() -> ap.setVvalue(0));
 
     }
     
@@ -192,8 +195,9 @@ public class viewExampleController implements Initializable {
 
     @FXML
     private void Escuchar_Page(MouseEvent event) {
-        System.out.println("Se ha accedido a la página: Inicial"); 
+        System.out.println("Se ha accedido a la página: Inicial");
         bp.setCenter(ap);
+        Platform.runLater(() -> ap.setVvalue(0));
     }
 
     @FXML

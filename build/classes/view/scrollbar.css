@@ -66,3 +66,15 @@
 .scroll-pane .corner {
     -fx-background-color: #F6F6F6;
 }
+
+/* Botones de álbum transparentes - neutralizar todos los estados de JavaFX */
+.album-btn,
+.album-btn:focused,
+.album-btn:hover,
+.album-btn:pressed,
+.album-btn:armed,
+.album-btn:focused:hover {
+    -fx-background-color: transparent;
+    -fx-effect: null;
+    -fx-border-color: transparent;
+}

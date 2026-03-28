@@ -13,6 +13,7 @@ import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -147,19 +148,20 @@ public class viewExampleController_1 implements Initializable {
         //INICIALIZAR VOLUMESLIDER......................................................
         
           volumeSlider.valueProperty().addListener(new ChangeListener<Number>() {
-              
+
         @Override
-        
+
         public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
             double volume = newValue.doubleValue() / 100.0;
             if (activeAlbumController != null) {
                 activeAlbumController.setMediaPlayerVolume(volume);
             }
         }
-        
+
     });
 
-    
+        Platform.runLater(() -> ap.setVvalue(0));
+
     }
 
     //CONFIGURACION DE CAMBIO DE PAGINA.............................................    
@@ -186,8 +188,9 @@ public class viewExampleController_1 implements Initializable {
 
     @FXML
     private void Escuchar_Page(MouseEvent event) {
-        System.out.println("Se ha accedido a la página: Inicial"); 
+        System.out.println("Se ha accedido a la página: Inicial");
         bp.setCenter(ap);
+        Platform.runLater(() -> ap.setVvalue(0));
     }
     
     
