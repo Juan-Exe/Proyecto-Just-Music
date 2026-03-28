@@ -271,6 +271,7 @@ private void playSong(String songPath, viewExampleController mainController) {
     if (mediaPlayer != null) {
         mediaPlayer.stop();
         mediaPlayer.dispose();
+        mediaPlayer = null;
     }
     Media media = new Media(new File(songPath).toURI().toString());
     mediaPlayer = new MediaPlayer(media);
@@ -314,6 +315,7 @@ private void playSong(String songPath, viewExampleController_1 mainController_1)
     if (mediaPlayer != null) {
         mediaPlayer.stop();
         mediaPlayer.dispose();
+        mediaPlayer = null;
     }
     Media media = new Media(new File(songPath).toURI().toString());
     mediaPlayer = new MediaPlayer(media);

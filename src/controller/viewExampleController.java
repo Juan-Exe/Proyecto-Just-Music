@@ -55,84 +55,9 @@ public class viewExampleController implements Initializable {
 //DECLARAR VOLUMESLIDER.........................................................
     
     private void handleVolumeChange() {
-        
         double volume = volumeSlider.getValue() / 100.0;
-        
-        if (deftonesController != null) {
-            deftonesController.setMediaPlayerVolume(volume);
-        }
-        if (thrillerController != null) {
-        thrillerController.setMediaPlayerVolume(volume);
-        }
-        
-        if (WDTY_1 != null) {
-        WDTY_1.setMediaPlayerVolume(volume);
-        
-        }
-        
-        if (WDTY_2 != null) {
-        WDTY_2.setMediaPlayerVolume(volume);
-        
-        }
-        
-        if (Lis != null) {
-        Lis.setMediaPlayerVolume(volume);
-        
-        }
-        
-        if (KNY != null) {
-        KNY.setMediaPlayerVolume(volume);
-       
-        }
-        
-        if (damn != null) {
-        damn.setMediaPlayerVolume(volume);
-       
-        }
-        
-        if (mr != null) {
-              mr.setMediaPlayerVolume(volume);
-       
-        }
-        
-        if (trench != null) {
-              trench.setMediaPlayerVolume(volume);
-       
-        }
-        
-        if (Blurry != null) {
-              Blurry.setMediaPlayerVolume(volume);
-       
-        }
-        
-        if (TGA != null) {
-              TGA.setMediaPlayerVolume(volume);
-       
-        }
-        
-        if (Cali != null) {
-              Cali.setMediaPlayerVolume(volume);
-       
-        }
-        
-        if (dayz != null) {
-              dayz.setMediaPlayerVolume(volume);
-       
-        }
-        
-        if (Lat != null) {
-              Lat.setMediaPlayerVolume(volume);
-       
-        }
-        
-        if (test != null) {
-              test.setMediaPlayerVolume(volume);
-       
-        }
-        
-        if (lon != null) {
-              lon.setMediaPlayerVolume(volume);
-       
+        if (activeAlbumController != null) {
+            activeAlbumController.setMediaPlayerVolume(volume);
         }
     }
     
@@ -229,76 +154,13 @@ public class viewExampleController implements Initializable {
 //INICIALIZAR VOLUMESLIDER......................................................
         
           volumeSlider.valueProperty().addListener(new ChangeListener<Number>() {
-              
+
         @Override
-        
         public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
             double volume = newValue.doubleValue() / 100.0;
-            
-            if (deftonesController != null) {
-                deftonesController.setMediaPlayerVolume(volume);
+            if (activeAlbumController != null) {
+                activeAlbumController.setMediaPlayerVolume(volume);
             }
-            if (thrillerController != null) {
-                thrillerController.setMediaPlayerVolume(volume);
-            }
-            if (WDTY_1 != null) {
-                WDTY_1.setMediaPlayerVolume(volume);
-            }
-            
-             if (WDTY_2 != null) {
-                WDTY_2.setMediaPlayerVolume(volume);
-            }
-             if (Lis != null) {
-                Lis.setMediaPlayerVolume(volume);
-            }
-              if (KNY != null) {
-                KNY.setMediaPlayerVolume(volume);
-            }
-              if (damn != null) {
-              damn.setMediaPlayerVolume(volume);
-              
-            }
-              if (mr != null) {
-              mr.setMediaPlayerVolume(volume);
-    
-        }
-              if (trench != null) {
-              trench.setMediaPlayerVolume(volume);
-       
-        }
-              if (Blurry != null) {
-              Blurry.setMediaPlayerVolume(volume);
-       
-        }
-              if (TGA != null) {
-              TGA.setMediaPlayerVolume(volume);
-       
-        }
-        
-              if (Cali != null) {
-              Cali.setMediaPlayerVolume(volume);
-       
-        }
-              if (dayz != null) {
-              dayz.setMediaPlayerVolume(volume);
-       
-        }
-        
-        if (Lat != null) {
-              Lat.setMediaPlayerVolume(volume);
-       
-        }
-        
-        if (test != null) {
-              test.setMediaPlayerVolume(volume);
-       
-        }
-        
-        if (lon != null) {
-              lon.setMediaPlayerVolume(volume);
-       
-        }
-              
         }
     });
 
