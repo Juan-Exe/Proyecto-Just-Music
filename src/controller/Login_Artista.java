@@ -69,7 +69,9 @@ public class Login_Artista implements Initializable {
     Scene scene = new Scene(root);
     Stage stage = new Stage();
     stage.setScene(scene);
-    stage.show(); 
+    stage.sizeToScene();
+        stage.setResizable(false);
+        stage.show(); 
     
     Stage currentStage = (Stage) Button_Registrarse.getScene().getWindow();
     currentStage.close();

@@ -47,7 +47,9 @@ public class Elegir_Tipo_Usuario_Controller implements Initializable {
     Scene scene = new Scene(root);
     Stage stage = new Stage();
     stage.setScene(scene);
-    stage.show(); 
+    stage.sizeToScene();
+        stage.setResizable(false);
+        stage.show(); 
 
     Stage currentStage = (Stage) Button_Artista.getScene().getWindow();
     currentStage.close();
@@ -62,7 +64,9 @@ public class Elegir_Tipo_Usuario_Controller implements Initializable {
     Scene scene = new Scene(root);
     Stage stage = new Stage();
     stage.setScene(scene);
-    stage.show();
+    stage.sizeToScene();
+        stage.setResizable(false);
+        stage.show();
 
     Stage currentStage = (Stage) Button_Oyente.getScene().getWindow();
     currentStage.close();

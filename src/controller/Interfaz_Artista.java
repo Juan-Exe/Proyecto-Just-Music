@@ -322,7 +322,9 @@ public class Interfaz_Artista implements Initializable {
              Scene scene = new Scene(root);
              Stage stage = new Stage();
              stage.setScene(scene);
-             stage.show();
+             stage.sizeToScene();
+        stage.setResizable(false);
+        stage.show();
              Stage currentStage = (Stage) Logout_Button.getScene().getWindow();
              currentStage.close();
              getMediaPlayer().stop();

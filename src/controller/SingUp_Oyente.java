@@ -70,7 +70,9 @@ public class SingUp_Oyente implements Initializable {
     Scene scene = new Scene(root);
     Stage stage = new Stage();
     stage.setScene(scene);
-    stage.show(); 
+    stage.sizeToScene();
+        stage.setResizable(false);
+        stage.show(); 
     
     Stage currentStage = (Stage) Bt_inicio_sesion.getScene().getWindow();
     currentStage.close();
