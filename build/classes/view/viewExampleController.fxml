@@ -225,16 +225,18 @@
                         <Font name="Microsoft Sans Serif" size="15.0" />
                      </font>
                   </Label>
-                  <Button fx:id="Bt_albums" alignment="BASELINE_LEFT" layoutX="40.0" layoutY="230.0" mnemonicParsing="false" onAction="#Page_Ab" prefHeight="39.0" prefWidth="258.0" style="-fx-background-color: transparent;" text="     Albumes" textFill="#5e5858">
+                  <Button fx:id="Bt_albums" alignment="BASELINE_LEFT" layoutX="32.0" layoutY="230.0" mnemonicParsing="false" onAction="#Page_Ab" prefHeight="39.0" prefWidth="271.0" style="-fx-background-color: transparent;" text=" Albumes" textFill="#5e5858">
                      <font>
                         <Font name="Microsoft Sans Serif" size="16.0" />
                      </font>
+                     <graphic>
+                        <Pane prefHeight="18.0" prefWidth="18.0" style="-fx-border-color: #05B2A8; -fx-border-radius: 3; -fx-border-width: 2;" />
+                     </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Pane layoutX="41.0" layoutY="241.0" prefHeight="18.0" prefWidth="18.0" style="-fx-border-color: #05B2A8; -fx-border-radius: 3; -fx-border-width: 2;" />
-                  <Button fx:id="Bt_art" alignment="BASELINE_LEFT" layoutX="29.0" layoutY="278.0" mnemonicParsing="false" onAction="#Page_Art" prefHeight="39.0" prefWidth="258.0" style="-fx-background-color: transparent;" text=" Artistas" textFill="#5e5858">
+                  <Button fx:id="Bt_art" alignment="BASELINE_LEFT" layoutX="29.0" layoutY="278.0" mnemonicParsing="false" onAction="#Page_Art" prefHeight="39.0" prefWidth="271.0" style="-fx-background-color: transparent;" text=" Artistas" textFill="#5e5858">
                      <font>
                         <Font name="Microsoft Sans Serif" size="16.0" />
                      </font>
@@ -249,12 +251,12 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Label layoutX="28.0" layoutY="300.0" text="Playlist" textFill="#5e5858">
+                  <Label layoutX="28.0" layoutY="325.0" text="Playlist" textFill="#5e5858">
                      <font>
                         <Font name="Microsoft Sans Serif" size="15.0" />
                      </font>
                   </Label>
-                  <Button fx:id="BT_Pls" alignment="BASELINE_LEFT" layoutX="29.0" layoutY="327.0" mnemonicParsing="false" onAction="#Page_plast" prefHeight="39.0" prefWidth="258.0" style="-fx-background-color: transparent;" text="   Todas Las Playlist" textFill="#5e5858">
+                  <Button fx:id="BT_Pls" alignment="BASELINE_LEFT" layoutX="29.0" layoutY="347.0" mnemonicParsing="false" onAction="#Page_plast" prefHeight="39.0" prefWidth="271.0" style="-fx-background-color: transparent;" text="   Todas Las Playlist" textFill="#5e5858">
                      <font>
                         <Font name="Microsoft Sans Serif" size="16.0" />
                      </font>
