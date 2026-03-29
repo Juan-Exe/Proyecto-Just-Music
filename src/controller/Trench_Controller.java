@@ -187,11 +187,15 @@ public class Trench_Controller implements Initializable, AlbumController {
             String pausedSong = songsPaths.get(currentSongIndex);
             System.out.println("Canción en pausa: " + pausedSong);
             mediaPlayer.pause();
+            mainController.setPlayIcon(false);
+            mainController_1.setPlayIcon(false);
         } else {
             System.out.println("Estado del reproductor: REANUDANDO");
             String resumedSong = songsPaths.get(currentSongIndex);
             System.out.println("Reanudando canción: " + resumedSong);
             mediaPlayer.play();
+            mainController.setPlayIcon(true);
+            mainController_1.setPlayIcon(true);
         }
     }
 }
@@ -276,6 +280,7 @@ private void playSong(String songPath, viewExampleController mainController) {
     mediaPlayer = new MediaPlayer(media);
     mainController.setMediaPlayer(mediaPlayer);
     mediaPlayer.play();
+    mainController.setPlayIcon(true);
     mediaPlayer.currentTimeProperty().addListener((obs, oldTime, newTime) -> {
         Platform.runLater(() -> mainController.updateProgressBar(newTime, mediaPlayer.getTotalDuration()));
     });
@@ -323,6 +328,7 @@ private void playSong(String songPath, viewExampleController_1 mainController_1)
     mediaPlayer = new MediaPlayer(media);
     mainController_1.setMediaPlayer(mediaPlayer);
     mediaPlayer.play();
+    mainController_1.setPlayIcon(true);
     mediaPlayer.currentTimeProperty().addListener((obs, oldTime, newTime) -> {
         Platform.runLater(() -> mainController_1.updateProgressBar(newTime, mediaPlayer.getTotalDuration()));
     });

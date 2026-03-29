@@ -189,6 +189,7 @@ public class viewExampleController_1 implements Initializable {
         Platform.runLater(() -> {
             ap.setVvalue(0);
             setActiveNavButton(Bt_escuchar);
+            progressSlider.setDisable(true);
         });
 
     }
@@ -209,8 +210,17 @@ public class viewExampleController_1 implements Initializable {
         progressSliderDragging = false;
     }
 
+    public void setPlayIcon(boolean playing) {
+        if (playing) {
+            playIcon.setImage(new Image(getClass().getResourceAsStream("/view/Pausa.png")));
+        } else {
+            playIcon.setImage(new Image(getClass().getResourceAsStream("/view/Reproducir.png")));
+        }
+    }
+
     public void updateProgressBar(Duration current, Duration total) {
         if (!progressSliderDragging && total != null && total.toSeconds() > 0) {
+            progressSlider.setDisable(false);
             double progress = current.toSeconds() / total.toSeconds() * 100.0;
             progressSlider.setValue(progress);
             currentTimeLabel.setText(formatTime(current));

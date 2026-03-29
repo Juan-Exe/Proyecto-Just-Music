@@ -193,6 +193,7 @@ public class viewExampleController implements Initializable {
         Platform.runLater(() -> {
             ap.setVvalue(0);
             setActiveNavButton(Bt_escuchar);
+            progressSlider.setDisable(true);
         });
 
     }
@@ -213,8 +214,17 @@ public class viewExampleController implements Initializable {
         progressSliderDragging = false;
     }
 
+    public void setPlayIcon(boolean playing) {
+        if (playing) {
+            playIcon.setImage(new Image(getClass().getResourceAsStream("/view/Pausa.png")));
+        } else {
+            playIcon.setImage(new Image(getClass().getResourceAsStream("/view/Reproducir.png")));
+        }
+    }
+
     public void updateProgressBar(Duration current, Duration total) {
         if (!progressSliderDragging && total != null && total.toSeconds() > 0) {
+            progressSlider.setDisable(false);
             double progress = current.toSeconds() / total.toSeconds() * 100.0;
             progressSlider.setValue(progress);
             currentTimeLabel.setText(formatTime(current));
@@ -1125,7 +1135,6 @@ private void Deftones_White_Pony_Page(MouseEvent event) {
 
     @FXML
     private void Page_Ab(ActionEvent event) {
-        setActiveNavButton(Bt_albums);
         showToast("Esta característica solo está disponible para usuarios registrados, por favor inicie sesión.");
     }
 
@@ -1133,7 +1142,6 @@ private void Deftones_White_Pony_Page(MouseEvent event) {
 
     @FXML
     private void Page_Art(ActionEvent event) {
-        setActiveNavButton(Bt_art);
         showToast("Solo los usuarios registrados pueden ver todos los artistas, por favor inicie sesión.");
     }
 
@@ -1141,7 +1149,6 @@ private void Deftones_White_Pony_Page(MouseEvent event) {
 
     @FXML
     private void Page_plast(ActionEvent event) {
-        setActiveNavButton(BT_Pls);
         showToast("Solo los usuarios registrados pueden ver todas las playlist, por favor inicie sesión.");
     }
     

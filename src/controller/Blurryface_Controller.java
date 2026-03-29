@@ -181,11 +181,15 @@ public class Blurryface_Controller implements Initializable, AlbumController {
             String pausedSong = songsPaths.get(currentSongIndex);
             System.out.println("Canción en pausa: " + pausedSong);
             mediaPlayer.pause();
+            mainController.setPlayIcon(false);
+            mainController_1.setPlayIcon(false);
         } else {
             System.out.println("Estado del reproductor: REANUDANDO");
             String resumedSong = songsPaths.get(currentSongIndex);
             System.out.println("Reanudando canción: " + resumedSong);
             mediaPlayer.play();
+            mainController.setPlayIcon(true);
+            mainController_1.setPlayIcon(true);
         }
     }
 }
@@ -270,6 +274,7 @@ private void playSong(String songPath, viewExampleController mainController) {
     mediaPlayer = new MediaPlayer(media);
     mainController.setMediaPlayer(mediaPlayer);
     mediaPlayer.play();
+    mainController.setPlayIcon(true);
     mediaPlayer.currentTimeProperty().addListener((obs, oldTime, newTime) -> {
         Platform.runLater(() -> mainController.updateProgressBar(newTime, mediaPlayer.getTotalDuration()));
     });
@@ -277,11 +282,11 @@ private void playSong(String songPath, viewExampleController mainController) {
 
     String[] parts = songPath.split("/");
     String album = parts[0];
-    String songName = parts[1].substring(3); 
-    int songNumber = currentSongIndex + 1; 
-    String albumName = parts[0]; 
+    String songName = parts[1].substring(3);
+    int songNumber = currentSongIndex + 1;
+    String albumName = parts[0];
     mainController.setAlbumLabel(albumName);
-    mainController.setSongLabel(songName); 
+    mainController.setSongLabel(songName);
 
     System.out.println("Reproduciendo canción #" + songNumber + ": " + songName + " del álbum: " + album);
 
@@ -317,6 +322,7 @@ private void playSong(String songPath, viewExampleController_1 mainController_1)
     mediaPlayer = new MediaPlayer(media);
     mainController_1.setMediaPlayer(mediaPlayer);
     mediaPlayer.play();
+    mainController_1.setPlayIcon(true);
     mediaPlayer.currentTimeProperty().addListener((obs, oldTime, newTime) -> {
         Platform.runLater(() -> mainController_1.updateProgressBar(newTime, mediaPlayer.getTotalDuration()));
     });
@@ -324,11 +330,11 @@ private void playSong(String songPath, viewExampleController_1 mainController_1)
 
     String[] parts = songPath.split("/");
     String album = parts[0];
-    String songName = parts[1].substring(3); 
-    int songNumber = currentSongIndex + 1; 
-    String albumName = parts[0]; 
+    String songName = parts[1].substring(3);
+    int songNumber = currentSongIndex + 1;
+    String albumName = parts[0];
     mainController_1.setAlbumLabel(albumName);
-    mainController_1.setSongLabel(songName); 
+    mainController_1.setSongLabel(songName);
 
     System.out.println("Reproduciendo canción #" + songNumber + ": " + songName + " del álbum: " + album);
 
