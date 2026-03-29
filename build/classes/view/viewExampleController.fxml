@@ -103,40 +103,50 @@
                            <Label layoutX="71.0" layoutY="10.0" text="Artistas Destacados">
                               <font><Font name="Microsoft Sans Serif" size="25.0" /></font>
                            </Label>
-                           <HBox layoutX="65.0" layoutY="50.0" prefHeight="133.0" prefWidth="862.0" spacing="1.0">
+                           <VBox layoutX="65.0" layoutY="50.0" spacing="5.0">
                               <children>
-                                 <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#A$AP_Page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
-                                    <graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@ASAP.png" /></image></ImageView></graphic>
-                                    <cursor><Cursor fx:constant="HAND" /></cursor>
-                                 </Button>
-                                 <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#TOOL_page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
-                                    <graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@Tool.png" /></image></ImageView></graphic>
-                                    <cursor><Cursor fx:constant="HAND" /></cursor>
-                                 </Button>
-                                 <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#RHCP_Page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
-                                    <graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@RHCPP.png" /></image></ImageView></graphic>
-                                    <cursor><Cursor fx:constant="HAND" /></cursor>
-                                 </Button>
-                                 <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#TOP_page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
-                                    <graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@TOP.png" /></image></ImageView></graphic>
-                                    <cursor><Cursor fx:constant="HAND" /></cursor>
-                                 </Button>
-                                 <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#Kedrick_page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
-                                    <graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@Kedrick.png" /></image></ImageView></graphic>
-                                    <cursor><Cursor fx:constant="HAND" /></cursor>
-                                 </Button>
-                                 <Button minHeight="133.0" mnemonicParsing="false" onMouseClicked="#Deftones_page" prefHeight="133.0" prefWidth="135.0" style="-fx-background-color: transparent;">
-                                    <graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@DT.png" /></image></ImageView></graphic>
-                                    <cursor><Cursor fx:constant="HAND" /></cursor>
-                                 </Button>
+                                 <HBox spacing="1.0">
+                                    <children>
+                                       <VBox alignment="CENTER" prefWidth="135.0">
+                                          <children>
+                                             <Button mnemonicParsing="false" onMouseClicked="#A$AP_Page" prefHeight="133.0" prefWidth="133.0" style="-fx-background-color: transparent;"><graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@ASAP.png" /></image></ImageView></graphic><cursor><Cursor fx:constant="HAND" /></cursor></Button>
+                                             <Label alignment="CENTER" prefWidth="135.0" text="A$AP Rocky"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                                          </children>
+                                       </VBox>
+                                       <VBox alignment="CENTER" prefWidth="135.0">
+                                          <children>
+                                             <Button mnemonicParsing="false" onMouseClicked="#TOOL_page" prefHeight="133.0" prefWidth="133.0" style="-fx-background-color: transparent;"><graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@Tool.png" /></image></ImageView></graphic><cursor><Cursor fx:constant="HAND" /></cursor></Button>
+                                             <Label alignment="CENTER" prefWidth="135.0" text="Tool"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                                          </children>
+                                       </VBox>
+                                       <VBox alignment="CENTER" prefWidth="135.0">
+                                          <children>
+                                             <Button mnemonicParsing="false" onMouseClicked="#RHCP_Page" prefHeight="133.0" prefWidth="133.0" style="-fx-background-color: transparent;"><graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@RHCPP.png" /></image></ImageView></graphic><cursor><Cursor fx:constant="HAND" /></cursor></Button>
+                                             <Label alignment="CENTER" prefWidth="135.0" text="Red Hot Chilly Peppers"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                                          </children>
+                                       </VBox>
+                                       <VBox alignment="CENTER" prefWidth="135.0">
+                                          <children>
+                                             <Button mnemonicParsing="false" onMouseClicked="#TOP_page" prefHeight="133.0" prefWidth="133.0" style="-fx-background-color: transparent;"><graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@TOP.png" /></image></ImageView></graphic><cursor><Cursor fx:constant="HAND" /></cursor></Button>
+                                             <Label alignment="CENTER" prefWidth="135.0" text="Twenty One Pilots"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                                          </children>
+                                       </VBox>
+                                       <VBox alignment="CENTER" prefWidth="135.0">
+                                          <children>
+                                             <Button mnemonicParsing="false" onMouseClicked="#Kedrick_page" prefHeight="133.0" prefWidth="133.0" style="-fx-background-color: transparent;"><graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@Kedrick.png" /></image></ImageView></graphic><cursor><Cursor fx:constant="HAND" /></cursor></Button>
+                                             <Label alignment="CENTER" prefWidth="135.0" text="Kendrick Lamar"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                                          </children>
+                                       </VBox>
+                                       <VBox alignment="CENTER" prefWidth="135.0">
+                                          <children>
+                                             <Button mnemonicParsing="false" onMouseClicked="#Deftones_page" prefHeight="133.0" prefWidth="133.0" style="-fx-background-color: transparent;"><graphic><ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@DT.png" /></image></ImageView></graphic><cursor><Cursor fx:constant="HAND" /></cursor></Button>
+                                             <Label alignment="CENTER" prefWidth="135.0" text="Deftones"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                                          </children>
+                                       </VBox>
+                                    </children>
+                                 </HBox>
                               </children>
-                           </HBox>
-                           <Label alignment="TOP_CENTER" layoutX="65.0" layoutY="188.0" prefWidth="133.0" text="A$AP Rocky"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
-                           <Label alignment="TOP_CENTER" layoutX="200.0" layoutY="188.0" prefWidth="133.0" text="Tool"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
-                           <Label alignment="TOP_CENTER" layoutX="335.0" layoutY="188.0" prefWidth="133.0" text="Red Hot Chilly Peppers"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
-                           <Label alignment="TOP_CENTER" layoutX="470.0" layoutY="188.0" prefWidth="133.0" text="Twenty One Pilots"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
-                           <Label alignment="TOP_CENTER" layoutX="605.0" layoutY="188.0" prefWidth="133.0" text="Kendrick Lamar"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
-                           <Label alignment="TOP_CENTER" layoutX="740.0" layoutY="188.0" prefWidth="133.0" text="Deftones"><font><Font name="Microsoft Sans Serif" size="12.0" /></font></Label>
+                           </VBox>
                         </children>
                      </AnchorPane>
                      <!-- Sección 3: Álbumes Destacados -->

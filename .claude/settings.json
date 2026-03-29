@@ -78,7 +78,8 @@
       "Bash(powershell -Command \"Get-ChildItem ''c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src'' -Recurse -Filter ''*.java'' | Select-String -Pattern ''exitoso'' | Select-Object Filename, LineNumber, Line\")",
       "Bash(ls \"c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src\\\\view\"\" | grep -i \"png)",
       "Bash(jpg)",
-      "Bash(ico \")"
+      "Bash(ico \")",
+      "Bash(find 'c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music' -name *.mp3)"
     ],
     "additionalDirectories": [
       "c:\\Users\\juand\\Documents\\JUAN DIEGO\\PROYECTOS\\Just Music\\Proyecto-Just-Music\\src\\view"
