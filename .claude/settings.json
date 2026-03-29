@@ -75,7 +75,10 @@
       "Bash(cmd /c \"dir /B /O-D /T:W \"\"c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src\\\\view\"\")",
       "Bash(powershell -Command \"Get-ChildItem ''c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src\\\\view\\\\'' | Sort-Object LastWriteTime -Descending | Select-Object -First 10 Name\")",
       "Bash(powershell -Command \"Get-ChildItem ''c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src'' -Recurse -Filter ''*.java'' | Select-String -Pattern ''exitoso|Exitoso|sesion exitoso'' -CaseSensitive:$false | Select-Object Filename, LineNumber, Line\")",
-      "Bash(powershell -Command \"Get-ChildItem ''c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src'' -Recurse -Filter ''*.java'' | Select-String -Pattern ''exitoso'' | Select-Object Filename, LineNumber, Line\")"
+      "Bash(powershell -Command \"Get-ChildItem ''c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src'' -Recurse -Filter ''*.java'' | Select-String -Pattern ''exitoso'' | Select-Object Filename, LineNumber, Line\")",
+      "Bash(ls \"c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src\\\\view\"\" | grep -i \"png)",
+      "Bash(jpg)",
+      "Bash(ico \")"
     ],
     "additionalDirectories": [
       "c:\\Users\\juand\\Documents\\JUAN DIEGO\\PROYECTOS\\Just Music\\Proyecto-Just-Music\\src\\view"
