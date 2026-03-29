@@ -18,6 +18,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.application.Platform;
 import javax.swing.JOptionPane;
 
 /**
@@ -244,6 +245,9 @@ private void playSong(String songPath, viewExampleController mainController) {
     mediaPlayer = new MediaPlayer(media);
     mainController.setMediaPlayer(mediaPlayer);
     mediaPlayer.play();
+    mediaPlayer.currentTimeProperty().addListener((obs, oldTime, newTime) -> {
+        Platform.runLater(() -> mainController.updateProgressBar(newTime, mediaPlayer.getTotalDuration()));
+    });
     currentSongIndex = songsPaths.indexOf(songPath);
 
     String[] parts = songPath.split("/");
@@ -288,6 +292,9 @@ private void playSong(String songPath, viewExampleController_1 mainController_1)
     mediaPlayer = new MediaPlayer(media);
     mainController_1.setMediaPlayer(mediaPlayer);
     mediaPlayer.play();
+    mediaPlayer.currentTimeProperty().addListener((obs, oldTime, newTime) -> {
+        Platform.runLater(() -> mainController_1.updateProgressBar(newTime, mediaPlayer.getTotalDuration()));
+    });
     currentSongIndex = songsPaths.indexOf(songPath);
 
     String[] parts = songPath.split("/");

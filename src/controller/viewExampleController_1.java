@@ -19,12 +19,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.control.Slider;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
@@ -34,6 +34,12 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.animation.FadeTransition;
+import javafx.animation.FadeTransition;
+import javafx.animation.ParallelTransition;
+import javafx.animation.PauseTransition;
+import javafx.animation.SequentialTransition;
+import javafx.animation.TranslateTransition;
 import javafx.util.Duration;
 
 public class viewExampleController_1 implements Initializable {
@@ -42,6 +48,8 @@ public class viewExampleController_1 implements Initializable {
      BorderPane bp;
     @FXML
      ScrollPane ap;
+    @FXML
+    private Button Bt_escuchar;
     @FXML
     private Button Bt_albums;
     @FXML
@@ -60,6 +68,24 @@ public class viewExampleController_1 implements Initializable {
     private Button bucleButton;
     @FXML
     private Slider volumeSlider;
+
+    @FXML
+    private ImageView playIcon;
+
+    @FXML
+    private Label toastLabel;
+
+    @FXML
+    private Slider progressSlider;
+
+    @FXML
+    private Label currentTimeLabel;
+
+    @FXML
+    private Label totalTimeLabel;
+
+    private boolean progressSliderDragging = false;
+
     @FXML
     private ImageView SongIVW;
     @FXML
@@ -160,11 +186,90 @@ public class viewExampleController_1 implements Initializable {
 
     });
 
-        Platform.runLater(() -> ap.setVvalue(0));
+        Platform.runLater(() -> {
+            ap.setVvalue(0);
+            setActiveNavButton(Bt_escuchar);
+        });
 
     }
 
-    //CONFIGURACION DE CAMBIO DE PAGINA.............................................    
+//PROGRESS SLIDER...............................................................
+
+    @FXML
+    private void onProgressSliderPressed(javafx.scene.input.MouseEvent event) {
+        progressSliderDragging = true;
+    }
+
+    @FXML
+    private void onProgressSliderReleased(javafx.scene.input.MouseEvent event) {
+        if (mediaPlayer != null) {
+            double total = mediaPlayer.getTotalDuration().toSeconds();
+            mediaPlayer.seek(Duration.seconds(progressSlider.getValue() / 100.0 * total));
+        }
+        progressSliderDragging = false;
+    }
+
+    public void updateProgressBar(Duration current, Duration total) {
+        if (!progressSliderDragging && total != null && total.toSeconds() > 0) {
+            double progress = current.toSeconds() / total.toSeconds() * 100.0;
+            progressSlider.setValue(progress);
+            currentTimeLabel.setText(formatTime(current));
+            totalTimeLabel.setText(formatTime(total));
+        }
+    }
+
+    private String formatTime(Duration d) {
+        int totalSecs = (int) d.toSeconds();
+        int min = totalSecs / 60;
+        int sec = totalSecs % 60;
+        return String.format("%d:%02d", min, sec);
+    }
+
+    //NAVEGACION ACTIVA.............................................................
+
+    private static final String STYLE_ACTIVE   = "-fx-background-color: #FFFFFF; -fx-border-color: #05B2A8; -fx-border-radius: 6; -fx-border-width: 2;";
+    private static final String STYLE_INACTIVE = "-fx-background-color: transparent;";
+
+    private void setActiveNavButton(Button active) {
+        Bt_escuchar.setStyle(STYLE_INACTIVE);
+        Bt_albums.setStyle(STYLE_INACTIVE);
+        Bt_art.setStyle(STYLE_INACTIVE);
+        BT_Pls.setStyle(STYLE_INACTIVE);
+        active.setStyle(STYLE_ACTIVE);
+    }
+
+//TOAST NOTIFICATION...........................................................
+
+    public void showToast(String message) {
+        toastLabel.setText(message);
+        toastLabel.setOpacity(0.0);
+        toastLabel.setTranslateY(30.0);
+        toastLabel.setVisible(true);
+
+        // Entrada: slide up + fade in
+        TranslateTransition slideIn = new TranslateTransition(Duration.millis(300), toastLabel);
+        slideIn.setFromY(30.0);
+        slideIn.setToY(0.0);
+
+        FadeTransition fadeIn = new FadeTransition(Duration.millis(300), toastLabel);
+        fadeIn.setFromValue(0.0);
+        fadeIn.setToValue(1.0);
+
+        ParallelTransition enterAnim = new ParallelTransition(slideIn, fadeIn);
+
+        // Pausa visible
+        PauseTransition pause = new PauseTransition(Duration.seconds(2.0));
+
+        // Salida: fade out
+        FadeTransition fadeOut = new FadeTransition(Duration.millis(400), toastLabel);
+        fadeOut.setFromValue(1.0);
+        fadeOut.setToValue(0.0);
+        fadeOut.setOnFinished(e -> toastLabel.setVisible(false));
+
+        new SequentialTransition(enterAnim, pause, fadeOut).play();
+    }
+
+    //CONFIGURACION DE CAMBIO DE PAGINA.............................................
     
     void loadPage(String page) {
         Parent root = null;
@@ -191,6 +296,7 @@ public class viewExampleController_1 implements Initializable {
         System.out.println("Se ha accedido a la página: Inicial");
         bp.setCenter(ap);
         Platform.runLater(() -> ap.setVvalue(0));
+        setActiveNavButton(Bt_escuchar);
     }
     
     
@@ -810,13 +916,14 @@ public class viewExampleController_1 implements Initializable {
 
 
      @FXML
-    private void Page_Ab(ActionEvent event) {  
+    private void Page_Ab(ActionEvent event) {
+        setActiveNavButton(Bt_albums);
     try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Albumes .fxml"));
         Parent root = loader.load();
         alb = loader.getController();
         if (alb != null) {
-            alb.setMainController_1(this); 
+            alb.setMainController_1(this);
             bp.setCenter(root);
             System.out.println("Se ha accedido a la página: Deftones_White_Pony_Page");
         } else {
@@ -831,8 +938,8 @@ public class viewExampleController_1 implements Initializable {
 
     @FXML
     private void Page_Art(ActionEvent event) {
-        
-           try {
+        setActiveNavButton(Bt_art);
+        try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Artistas .fxml"));
         Parent root = loader.load();
         art = loader.getController();
@@ -905,8 +1012,8 @@ public class viewExampleController_1 implements Initializable {
 
     @FXML
     private void Page_plast(ActionEvent event) {
-        
-     try {
+        setActiveNavButton(BT_Pls);
+        try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Playlist.fxml"));
         Parent root = loader.load();
         Play = loader.getController();
@@ -943,8 +1050,10 @@ public class viewExampleController_1 implements Initializable {
         if (mediaPlayer != null) {
             if (mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
                 mediaPlayer.pause();
+                playIcon.setImage(new Image(getClass().getResourceAsStream("/view/Reproducir.png")));
             } else {
                 mediaPlayer.play();
+                playIcon.setImage(new Image(getClass().getResourceAsStream("/view/Pausa.png")));
             }
         }
 }

@@ -24,6 +24,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.control.Slider;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
@@ -33,10 +34,17 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.animation.FadeTransition;
+import javafx.animation.ParallelTransition;
+import javafx.animation.PauseTransition;
+import javafx.animation.SequentialTransition;
+import javafx.animation.TranslateTransition;
 import javafx.util.Duration;
 
 public class viewExampleController implements Initializable {
 
+    @FXML
+    private Button Bt_escuchar;
     @FXML
     private Button Bt_albums;
     @FXML
@@ -87,6 +95,23 @@ public class viewExampleController implements Initializable {
 
     @FXML
     private Slider volumeSlider;
+
+    @FXML
+    private ImageView playIcon;
+
+    @FXML
+    private Label toastLabel;
+
+    @FXML
+    private Slider progressSlider;
+
+    @FXML
+    private Label currentTimeLabel;
+
+    @FXML
+    private Label totalTimeLabel;
+
+    private boolean progressSliderDragging = false;
     
     public Media media;
     
@@ -165,12 +190,89 @@ public class viewExampleController implements Initializable {
         }
     });
 
-        Platform.runLater(() -> ap.setVvalue(0));
+        Platform.runLater(() -> {
+            ap.setVvalue(0);
+            setActiveNavButton(Bt_escuchar);
+        });
 
     }
-    
-   
-    
+
+//PROGRESS SLIDER...............................................................
+
+    @FXML
+    private void onProgressSliderPressed(javafx.scene.input.MouseEvent event) {
+        progressSliderDragging = true;
+    }
+
+    @FXML
+    private void onProgressSliderReleased(javafx.scene.input.MouseEvent event) {
+        if (mediaPlayer != null) {
+            double total = mediaPlayer.getTotalDuration().toSeconds();
+            mediaPlayer.seek(Duration.seconds(progressSlider.getValue() / 100.0 * total));
+        }
+        progressSliderDragging = false;
+    }
+
+    public void updateProgressBar(Duration current, Duration total) {
+        if (!progressSliderDragging && total != null && total.toSeconds() > 0) {
+            double progress = current.toSeconds() / total.toSeconds() * 100.0;
+            progressSlider.setValue(progress);
+            currentTimeLabel.setText(formatTime(current));
+            totalTimeLabel.setText(formatTime(total));
+        }
+    }
+
+    private String formatTime(Duration d) {
+        int totalSecs = (int) d.toSeconds();
+        int min = totalSecs / 60;
+        int sec = totalSecs % 60;
+        return String.format("%d:%02d", min, sec);
+    }
+
+//NAVEGACION ACTIVA.............................................................
+
+    private static final String STYLE_ACTIVE   = "-fx-background-color: #FFFFFF; -fx-border-color: #05B2A8; -fx-border-radius: 6; -fx-border-width: 2;";
+    private static final String STYLE_INACTIVE = "-fx-background-color: transparent;";
+
+    private void setActiveNavButton(Button active) {
+        Bt_escuchar.setStyle(STYLE_INACTIVE);
+        Bt_albums.setStyle(STYLE_INACTIVE);
+        Bt_art.setStyle(STYLE_INACTIVE);
+        BT_Pls.setStyle(STYLE_INACTIVE);
+        active.setStyle(STYLE_ACTIVE);
+    }
+
+//TOAST NOTIFICATION...........................................................
+
+    public void showToast(String message) {
+        toastLabel.setText(message);
+        toastLabel.setOpacity(0.0);
+        toastLabel.setTranslateY(30.0);
+        toastLabel.setVisible(true);
+
+        // Entrada: slide up + fade in
+        TranslateTransition slideIn = new TranslateTransition(Duration.millis(300), toastLabel);
+        slideIn.setFromY(30.0);
+        slideIn.setToY(0.0);
+
+        FadeTransition fadeIn = new FadeTransition(Duration.millis(300), toastLabel);
+        fadeIn.setFromValue(0.0);
+        fadeIn.setToValue(1.0);
+
+        ParallelTransition enterAnim = new ParallelTransition(slideIn, fadeIn);
+
+        // Pausa visible
+        PauseTransition pause = new PauseTransition(Duration.seconds(2.0));
+
+        // Salida: fade out
+        FadeTransition fadeOut = new FadeTransition(Duration.millis(400), toastLabel);
+        fadeOut.setFromValue(1.0);
+        fadeOut.setToValue(0.0);
+        fadeOut.setOnFinished(e -> toastLabel.setVisible(false));
+
+        new SequentialTransition(enterAnim, pause, fadeOut).play();
+    }
+
 //CONFIGURACION DE CAMBIO DE PAGINA.............................................    
     
     void loadPage(String page) {
@@ -198,6 +300,7 @@ public class viewExampleController implements Initializable {
         System.out.println("Se ha accedido a la página: Inicial");
         bp.setCenter(ap);
         Platform.runLater(() -> ap.setVvalue(0));
+        setActiveNavButton(Bt_escuchar);
     }
 
     @FXML
@@ -810,139 +913,75 @@ private void Deftones_White_Pony_Page(MouseEvent event) {
     private void resetMedia(ActionEvent event) {
         
          if (deftonesController != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
          
     }
     
          if (thrillerController != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
    
     }   
          
          if (WDTY_1 != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
          }
     
         
         if (WDTY_2 != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
   
     }
         
         if (Lis != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
   
     }
         if (KNY != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
   
     }
         
         if (damn != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
   
     }
         
         if (mr != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
   
     }
         
         if (trench != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
   
     }
         
         if (Blurry != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
   
     }
         if (TGA != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
   
     }
         if (Cali != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
   
     }
         if (Lat != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
   
     }
         if (dayz != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
   
     }
         if (test != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
   
     }
         if (lon != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar a la canción anterior solo esta disponible para usuarios registrados por favor inicie sesion.");
   
     }
   
@@ -954,8 +993,10 @@ private void Deftones_White_Pony_Page(MouseEvent event) {
         if (mediaPlayer != null) {
             if (mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
                 mediaPlayer.pause();
+                playIcon.setImage(new Image(getClass().getResourceAsStream("/view/Reproducir.png")));
             } else {
                 mediaPlayer.play();
+                playIcon.setImage(new Image(getClass().getResourceAsStream("/view/Pausa.png")));
             }
         }
 }
@@ -964,154 +1005,90 @@ private void Deftones_White_Pony_Page(MouseEvent event) {
     private void NextMedia(ActionEvent event) {
         
          if (deftonesController != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
     }
     
          if (thrillerController != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
     
     }
          
          if (WDTY_1 != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
 
     }
          
          if (WDTY_2 != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
 
     }
          if (Lis != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
 
     }
          
          if (KNY != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
 
     }
          if (damn != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
 
     }
          
          if (mr != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
 
     }
          
          if (trench != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
 
     }
          if (Blurry != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
 
     }
          
          if (TGA != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
 
     }
          
          if (Cali != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
 
     }
          if (Lat != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
 
     }
          if (dayz != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
 
     }
          
          if (test != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
 
     }
          if (lon != null) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+    showToast("La funcion de pasar canción solo esta disponible para usuarios registrados por favor inicie sesion.");
     
 
     }
@@ -1148,33 +1125,24 @@ private void Deftones_White_Pony_Page(MouseEvent event) {
 
     @FXML
     private void Page_Ab(ActionEvent event) {
-          Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("Esta característica solo esta disponible para usuarios registrados por favor inicie sesion.");
-    alert.show();
+        setActiveNavButton(Bt_albums);
+        showToast("Esta característica solo está disponible para usuarios registrados, por favor inicie sesión.");
     }
 
-   
+
 
     @FXML
     private void Page_Art(ActionEvent event) {
-          Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("Solo los usuarios registrados pueden ver todos los artistas por favor inicie sesion.");
-    alert.show();
+        setActiveNavButton(Bt_art);
+        showToast("Solo los usuarios registrados pueden ver todos los artistas, por favor inicie sesión.");
     }
 
-    
+
 
     @FXML
     private void Page_plast(ActionEvent event) {
-    Alert alert = new Alert(Alert.AlertType.WARNING);
-    alert.setTitle("Advertencia");
-    alert.setHeaderText(null);
-    alert.setContentText("Solo los usuarios registrados pueden ver todas las playlist por favor inicie sesion.");
-    alert.show();
+        setActiveNavButton(BT_Pls);
+        showToast("Solo los usuarios registrados pueden ver todas las playlist, por favor inicie sesión.");
     }
     
 public void setMainController(viewExampleController mainController) {

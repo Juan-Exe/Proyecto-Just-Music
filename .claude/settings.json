@@ -69,7 +69,13 @@
       "Bash(cmd /c \"cd \"\"c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\"\" && javac -encoding UTF-8 -cp \"\"build/classes;dist/Proyecto Just Music.jar;dist/lib/mysql-connector-j-8.3.0.jar;C:/Program Files/Java/jdk1.8.0_202/jre/lib/ext/jfxrt.jar\"\" -d build/classes src/controller/viewExampleController.java src/controller/viewExampleController_1.java 2>&1\")",
       "Bash(cmd /c \"cd \"\"c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\"\" && javac -encoding UTF-8 -cp build/classes;\"\"dist/Proyecto Just Music.jar\"\";dist/lib/mysql-connector-j-8.3.0.jar;\"\"C:/Program Files/Java/jdk1.8.0_202/jre/lib/ext/jfxrt.jar\"\" -d build/classes src/controller/viewExampleController.java src/controller/viewExampleController_1.java\")",
       "Bash(cmd /c \"c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\compile.bat\")",
-      "Bash(powershell -Command \":*)"
+      "Bash(powershell -Command \":*)",
+      "Bash(dir /B /O-D 'c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src\\\\view\\\\*.png')",
+      "Bash(cmd /c \"dir /B /O-D \"\"c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src\\\\view\\\\*.png\"\"\")",
+      "Bash(cmd /c \"dir /B /O-D /T:W \"\"c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src\\\\view\"\")",
+      "Bash(powershell -Command \"Get-ChildItem ''c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src\\\\view\\\\'' | Sort-Object LastWriteTime -Descending | Select-Object -First 10 Name\")",
+      "Bash(powershell -Command \"Get-ChildItem ''c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src'' -Recurse -Filter ''*.java'' | Select-String -Pattern ''exitoso|Exitoso|sesion exitoso'' -CaseSensitive:$false | Select-Object Filename, LineNumber, Line\")",
+      "Bash(powershell -Command \"Get-ChildItem ''c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src'' -Recurse -Filter ''*.java'' | Select-String -Pattern ''exitoso'' | Select-Object Filename, LineNumber, Line\")"
     ],
     "additionalDirectories": [
       "c:\\Users\\juand\\Documents\\JUAN DIEGO\\PROYECTOS\\Just Music\\Proyecto-Just-Music\\src\\view"

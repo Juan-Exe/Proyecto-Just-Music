@@ -67,6 +67,37 @@
     -fx-background-color: #F6F6F6;
 }
 
+/* Slider de progreso de canción */
+#progressSlider .track {
+    -fx-background-color: #E0E0E0;
+    -fx-background-radius: 3px;
+    -fx-pref-height: 4px;
+}
+
+#progressSlider .thumb {
+    -fx-background-color: #05B2A8;
+    -fx-background-radius: 50%;
+    -fx-pref-width: 12px;
+    -fx-pref-height: 12px;
+    -fx-effect: null;
+}
+
+#progressSlider .thumb:hover {
+    -fx-background-color: #04938B;
+    -fx-pref-width: 14px;
+    -fx-pref-height: 14px;
+}
+
+#progressSlider:focused .thumb {
+    -fx-background-color: #05B2A8;
+    -fx-effect: null;
+}
+
+#progressSlider .colored-track {
+    -fx-background-color: #05B2A8;
+    -fx-background-radius: 3px;
+}
+
 /* Botones de álbum transparentes - neutralizar todos los estados de JavaFX */
 .album-btn,
 .album-btn:focused,

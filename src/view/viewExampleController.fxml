@@ -205,7 +205,7 @@
                         <Image url="@LOGO-JUST-MUSIC.png" />
                      </image>
                   </ImageView>
-                  <Button alignment="BASELINE_LEFT" layoutX="27.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#Escuchar_Page" prefHeight="39.0" prefWidth="271.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #05B2A8; -fx-border-radius: 6; -fx-border-width: 2;" text=" Escuchar" textFill="#5e5858">
+                  <Button fx:id="Bt_escuchar" alignment="BASELINE_LEFT" layoutX="27.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#Escuchar_Page" prefHeight="39.0" prefWidth="271.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #05B2A8; -fx-border-radius: 6; -fx-border-width: 2;" text=" Escuchar" textFill="#5e5858">
                      <font>
                         <Font name="Microsoft Sans Serif" size="16.0" />
                      </font>
@@ -293,7 +293,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="99.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="playIcon" fitHeight="20.0" fitWidth="20.0" layoutX="99.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Reproducir.png" />
                      </image>
@@ -351,15 +351,23 @@
                </children></Pane>
             <Pane layoutX="49.0" layoutY="1.0" prefHeight="47.0" prefWidth="441.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 4;">
                <children>
-                  <Label fx:id="SongLabel" layoutX="10.0" layoutY="9.0" textFill="#797979">
+                  <Label fx:id="SongLabel" layoutX="10.0" layoutY="3.0" textFill="#797979">
                      <font>
-                        <Font name="Microsoft Sans Serif" size="12.0" />
+                        <Font name="Microsoft Sans Serif" size="11.0" />
                      </font>
                   </Label>
-                  <Label fx:id="AlbumLabel" layoutX="10.0" layoutY="24.0" textFill="#05b2a8">
+                  <Label fx:id="AlbumLabel" layoutX="10.0" layoutY="17.0" textFill="#05b2a8">
                      <font>
-                        <Font name="Microsoft Sans Serif" size="12.0" />
+                        <Font name="Microsoft Sans Serif" size="11.0" />
                      </font>
+                  </Label>
+                  <!-- Barra de progreso -->
+                  <Label fx:id="currentTimeLabel" layoutX="10.0" layoutY="33.0" text="0:00" textFill="#05B2A8">
+                     <font><Font name="Microsoft Sans Serif" size="9.0" /></font>
+                  </Label>
+                  <Slider fx:id="progressSlider" layoutX="38.0" layoutY="31.0" prefWidth="355.0" onMousePressed="#onProgressSliderPressed" onMouseReleased="#onProgressSliderReleased" />
+                  <Label fx:id="totalTimeLabel" layoutX="397.0" layoutY="33.0" text="0:00" textFill="#797979">
+                     <font><Font name="Microsoft Sans Serif" size="9.0" /></font>
                   </Label>
                </children></Pane>
          </children>
@@ -369,5 +377,7 @@
             <Image url="@Bocina.png" />
          </image>
       </ImageView>
+      <!-- Toast notification -->
+      <Label fx:id="toastLabel" layoutX="980.0" layoutY="660.0" visible="false" wrapText="true" maxWidth="340.0" translateY="30.0" style="-fx-background-color: #05B2A8; -fx-text-fill: white; -fx-padding: 12 20 12 20; -fx-background-radius: 10; -fx-font-size: 13px; -fx-font-family: 'Microsoft Sans Serif'; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 3);" />
    </children>
 </AnchorPane>

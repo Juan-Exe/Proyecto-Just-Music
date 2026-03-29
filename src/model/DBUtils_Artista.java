@@ -44,8 +44,12 @@ public class DBUtils_Artista {
             if (resultSet.isBeforeFirst()) {
                 System.out.println("El usuario ya existe!");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("Este Correo ya esta registrado");
-                alert.show();
+                alert.setTitle("Just Music");
+                alert.setHeaderText(null);
+                alert.setContentText("Este correo ya está registrado.");
+                alert.getDialogPane().setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #05B2A8; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;");
+                alert.getDialogPane().lookupButton(javafx.scene.control.ButtonType.OK).setStyle("-fx-background-color: #05B2A8; -fx-text-fill: white; -fx-background-radius: 6;");
+                alert.showAndWait();
                 
             } else {
                 psInsert = connection.prepareStatement("INSERT INTO users_artista (correo, contraseña) VALUES (?, ?)");
@@ -53,9 +57,6 @@ public class DBUtils_Artista {
                 psInsert.setString(2, contraseña);
                 psInsert.executeUpdate();
                 
-                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                 alert.setContentText("Registro exitoso");
-                 alert.show();
                  
                 
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/InterfazArtista.fxml"));
@@ -123,17 +124,18 @@ public class DBUtils_Artista {
             if(!resultSet.isBeforeFirst()){
                 System.out.println("User not found in the database");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("Las credenciales dadas son incorrectas");
-                alert.show();
+                alert.setTitle("Just Music");
+                alert.setHeaderText(null);
+                alert.setContentText("Las credenciales dadas son incorrectas.");
+                alert.getDialogPane().setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #05B2A8; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;");
+                alert.getDialogPane().lookupButton(javafx.scene.control.ButtonType.OK).setStyle("-fx-background-color: #05B2A8; -fx-text-fill: white; -fx-background-radius: 6;");
+                alert.showAndWait();
             } else {
                 while (resultSet.next()) {
                     String retrivedPassword = resultSet.getString("contraseña");
                     
                     if (retrivedPassword.equals(contraseña)) {
                         
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setContentText("Inicio de sesión exitoso");
-                        alert.show();
                         
                         
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/InterfazArtista.fxml"));

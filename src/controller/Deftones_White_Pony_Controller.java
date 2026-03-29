@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -271,13 +272,17 @@ private void playSong(String songPath, viewExampleController mainController) {
     mediaPlayer.play();
     currentSongIndex = songsPaths.indexOf(songPath);
 
+    mediaPlayer.currentTimeProperty().addListener((obs, oldTime, newTime) -> {
+        Platform.runLater(() -> mainController.updateProgressBar(newTime, mediaPlayer.getTotalDuration()));
+    });
+
     String[] parts = songPath.split("/");
     String album = parts[0];
-    String songName = parts[1].substring(3); 
-    int songNumber = currentSongIndex + 1; 
-    String albumName = parts[0]; 
+    String songName = parts[1].substring(3);
+    int songNumber = currentSongIndex + 1;
+    String albumName = parts[0];
     mainController.setAlbumLabel(albumName);
-    mainController.setSongLabel(songName); 
+    mainController.setSongLabel(songName);
 
     System.out.println("Reproduciendo canción #" + songNumber + ": " + songName + " del álbum: " + album);
 
@@ -315,13 +320,17 @@ private void playSong(String songPath, viewExampleController_1 mainController_1)
     mediaPlayer.play();
     currentSongIndex = songsPaths.indexOf(songPath);
 
+    mediaPlayer.currentTimeProperty().addListener((obs, oldTime, newTime) -> {
+        Platform.runLater(() -> mainController_1.updateProgressBar(newTime, mediaPlayer.getTotalDuration()));
+    });
+
     String[] parts = songPath.split("/");
     String album = parts[0];
-    String songName = parts[1].substring(3); 
-    int songNumber = currentSongIndex + 1; 
-    String albumName = parts[0]; 
+    String songName = parts[1].substring(3);
+    int songNumber = currentSongIndex + 1;
+    String albumName = parts[0];
     mainController_1.setAlbumLabel(albumName);
-    mainController_1.setSongLabel(songName); 
+    mainController_1.setSongLabel(songName);
 
     System.out.println("Reproduciendo canción #" + songNumber + ": " + songName + " del álbum: " + album);
 
