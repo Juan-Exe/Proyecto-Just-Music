@@ -301,6 +301,15 @@ public class viewExampleController_1 implements Initializable {
         mediaPlayer = player;
     }
 
+    private void stopCurrentMedia() {
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer.dispose();
+            mediaPlayer = null;
+        }
+        setPlayIcon(false);
+    }
+
     @FXML
     private void Escuchar_Page(MouseEvent event) {
         System.out.println("Se ha accedido a la página: Inicial");
@@ -312,7 +321,8 @@ public class viewExampleController_1 implements Initializable {
     
     @FXML
     private void Deftones_White_Pony_Page(MouseEvent event) {
-    try {
+        stopCurrentMedia();
+        try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Deftones_White_Pony_Page.fxml"));
         Parent root = loader.load();
         deftonesController = loader.getController();
@@ -330,7 +340,8 @@ public class viewExampleController_1 implements Initializable {
 }
     
      void Koi_No_Yokan(MouseEvent event) {
-   try {
+        stopCurrentMedia();
+        try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Deftones_Koi_No_Yokan_Page_.fxml"));
         Parent root = loader.load();
         KNY = loader.getController();
@@ -348,7 +359,8 @@ public class viewExampleController_1 implements Initializable {
 }
     
     void White_Pony_Page(MouseEvent event) {
-   try {
+        stopCurrentMedia();
+        try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Deftones_White_Pony_Page.fxml"));
         Parent root = loader.load();
         deftonesController = loader.getController();
@@ -369,6 +381,7 @@ public class viewExampleController_1 implements Initializable {
 
     @FXML
     private void Thriller_Page(MouseEvent event) {
+        stopCurrentMedia();
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Thriller_Page.fxml"));
         Parent root = loader.load();
@@ -388,6 +401,7 @@ public class viewExampleController_1 implements Initializable {
     }
     
     void Thriller(MouseEvent event) {
+        stopCurrentMedia();
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Thriller_Page.fxml"));
         Parent root = loader.load();
@@ -408,7 +422,8 @@ public class viewExampleController_1 implements Initializable {
 
     @FXML
     private void WDTY_Page(MouseEvent event) {
-         try {
+        stopCurrentMedia();
+        try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/WDTY_Page.fxml"));
         Parent root = loader.load();
         WDTY_1 = loader.getController();
@@ -427,6 +442,7 @@ public class viewExampleController_1 implements Initializable {
     }
     
      void WDTY_Page_2(MouseEvent event) {
+        stopCurrentMedia();
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/WDTY_Page_2.fxml"));
         Parent root = loader.load();
@@ -446,6 +462,7 @@ public class viewExampleController_1 implements Initializable {
 }
     
     void WDTY_Page_1(MouseEvent event) {
+        stopCurrentMedia();
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/WDTY_Page.fxml"));
         Parent root = loader.load();
@@ -465,6 +482,7 @@ public class viewExampleController_1 implements Initializable {
     
     @FXML
     void Lisa_Page(MouseEvent event) {
+        stopCurrentMedia();
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Lisa_Page.fxml"));
         Parent root = loader.load();
@@ -502,6 +520,7 @@ public class viewExampleController_1 implements Initializable {
     
     @FXML
     void Testing(MouseEvent event) {
+        stopCurrentMedia();
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Asap_Rocky_Testing.fxml"));
         Parent root = loader.load();
@@ -520,6 +539,7 @@ public class viewExampleController_1 implements Initializable {
     }
     
     void Long(MouseEvent event) {
+        stopCurrentMedia();
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Asap_Rocky_L_L_A.fxml"));
         Parent root = loader.load();
@@ -594,7 +614,7 @@ public class viewExampleController_1 implements Initializable {
     
     @FXML
     void Lateralus(MouseEvent event) {
-        
+        stopCurrentMedia();
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Tool_Lateralus.fxml"));
         Parent root = loader.load();
@@ -614,7 +634,7 @@ public class viewExampleController_1 implements Initializable {
     }
     
     void Days(MouseEvent event) {
-        
+        stopCurrentMedia();
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Tool_10_000_Days.fxml"));
         Parent root = loader.load();
@@ -654,6 +674,7 @@ public class viewExampleController_1 implements Initializable {
     }
     
         void The_Getaway(MouseEvent event) {
+        stopCurrentMedia();
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/RHCP_The_Getaway.fxml"));
         Parent root = loader.load();
@@ -674,6 +695,7 @@ public class viewExampleController_1 implements Initializable {
     }
     
     void California(MouseEvent event) {
+        stopCurrentMedia();
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/RHCP_Californication.fxml"));
         Parent root = loader.load();
@@ -734,7 +756,8 @@ public class viewExampleController_1 implements Initializable {
     
     @FXML
     void Trench(MouseEvent event) {
-    try {
+        stopCurrentMedia();
+        try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TOP_Trench.fxml"));
         Parent root = loader.load();
         trench = loader.getController();
@@ -754,7 +777,8 @@ public class viewExampleController_1 implements Initializable {
     }
     
     void Blurryface(MouseEvent event) {
-    try {
+        stopCurrentMedia();
+        try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/TOP_Blurryface.fxml"));
         Parent root = loader.load();
         Blurry = loader.getController();
@@ -830,7 +854,7 @@ public class viewExampleController_1 implements Initializable {
     }
     
     void Damn(MouseEvent event) {
-        
+        stopCurrentMedia();
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Kendrick_Damn.fxml"));
         Parent root = loader.load();
@@ -851,7 +875,7 @@ public class viewExampleController_1 implements Initializable {
     
     @FXML
     void Mr_Morale(MouseEvent event) {
-        
+        stopCurrentMedia();
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Kendrick_Mr_Morale.fxml"));
         Parent root = loader.load();

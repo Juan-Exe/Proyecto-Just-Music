@@ -102,56 +102,56 @@ public class WDTY_Controller_1 implements Initializable, AlbumController {
 
     private void loadSongs() {
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/01 Future - We Don t Trust You.mp3");
-      albumImages.put("Future - WE DON'T TRUST YOU/01 Future - We Don t Trust You.mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/01 Future - We Don t Trust You.mp3");
+      albumImages.put("Future - WE DONT TRUST YOU/01 Future - We Don t Trust You.mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/02 Future - Young Metro.mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/02 Future - Young Metro.mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/02 Future - Young Metro.mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/02 Future - Young Metro.mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/03 Future - Ice Attack.mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/03 Future - Ice Attack.mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/03 Future - Ice Attack.mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/03 Future - Ice Attack.mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/04 Future - Type Shit.mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/04 Future - Type Shit.mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/04 Future - Type Shit.mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/04 Future - Type Shit.mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/05 Future - Claustrophobic.mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/05 Future - Claustrophobic.mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/05 Future - Claustrophobic.mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/05 Future - Claustrophobic.mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/06 Future - Like That.mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/06 Future - Like That.mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/06 Future - Like That.mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/06 Future - Like That.mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/07 Future - Slimed In.mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/07 Future - Slimed In.mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/07 Future - Slimed In.mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/07 Future - Slimed In.mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/08 Future - Magic Don Juan (Princess Diana).mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/08 Future - Magic Don Juan (Princess Diana).mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/08 Future - Magic Don Juan (Princess Diana).mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/08 Future - Magic Don Juan (Princess Diana).mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/09 Future - Cinderella.mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/09 Future - Cinderella.mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/09 Future - Cinderella.mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/09 Future - Cinderella.mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/10 Future - Runnin Outta Time.mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/10 Future - Runnin Outta Time.mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/10 Future - Runnin Outta Time.mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/10 Future - Runnin Outta Time.mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/11 Future - Fried (She a Vibe).mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/11 Future - Fried (She a Vibe).mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/11 Future - Fried (She a Vibe).mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/11 Future - Fried (She a Vibe).mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/12 Future - Ain t No Love.mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/12 Future - Ain t No Love.mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/12 Future - Ain t No Love.mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/12 Future - Ain t No Love.mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/13 Future - Everyday Hustle.mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/13 Future - Everyday Hustle.mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/13 Future - Everyday Hustle.mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/13 Future - Everyday Hustle.mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/14 Future - GTA.mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/14 Future - GTA.mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/14 Future - GTA.mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/14 Future - GTA.mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/15 Future - Seen it All.mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/15 Future - Seen it All.mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/15 Future - Seen it All.mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/15 Future - Seen it All.mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/16 Future - WTFYM.mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/16 Future - WTFYM.mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/16 Future - WTFYM.mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/16 Future - WTFYM.mp3", "Mini_Images/WDTY mini.png");
 
-        songsPaths.add("Future - WE DON'T TRUST YOU/17 Future - Where My Twin @ (Bonus).mp3");
-        albumImages.put("Future - WE DON'T TRUST YOU/17 Future - Where My Twin @ (Bonus).mp3", "Mini_Images/WDTY mini.png");
+        songsPaths.add("Future - WE DONT TRUST YOU/17 Future - Where My Twin @ (Bonus).mp3");
+        albumImages.put("Future - WE DONT TRUST YOU/17 Future - Where My Twin @ (Bonus).mp3", "Mini_Images/WDTY mini.png");
 
     }
 

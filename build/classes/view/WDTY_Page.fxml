@@ -70,20 +70,10 @@
             <Font name="Microsoft Sans Serif" size="14.0" />
          </font>
       </Label>
-      <ScrollPane fx:id="songListScroll" layoutX="40.0" layoutY="351.0" prefHeight="190.0" prefWidth="956.0" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" fitToWidth="true">
+      <ScrollPane fx:id="songListScroll" layoutX="40.0" layoutY="351.0" prefHeight="260.0" prefWidth="956.0" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" fitToWidth="true">
          <content>
             <VBox fx:id="songListVBox" prefWidth="950.0" />
          </content>
       </ScrollPane>
-      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="932.0" layoutY="554.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
-         <image>
-            <Image url="@ABAJO.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="931.0" layoutY="551.0" mnemonicParsing="false" onMouseClicked="#WDTY_next" prefHeight="20.0" prefWidth="20.0" rotate="-90.0" style="-fx-background-color: transparent;">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
    </children>
 </AnchorPane>

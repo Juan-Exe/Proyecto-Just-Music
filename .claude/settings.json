@@ -87,7 +87,8 @@
       "Bash(\"c:/Program Files/Eclipse Adoptium/jdk-25.0.2.10-hotspot/bin/jpackage\" --type app-image --name \"Just Music\" --app-version \"1.0\" --vendor \"Juan Diego\" --input \"c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music/dist\" --main-jar \"JustMusic.jar\" --runtime-image \"c:/Program Files/Java/jre1.8.0_202\" --dest \"c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music/installer\")",
       "Bash(PROJECT=\"c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music\")",
       "Bash(APP=\"$PROJECT/installer/Just Music/app\")",
-      "Bash(cp -r \"$PROJECT\"/Future* \"$APP/\")"
+      "Bash(cp -r \"$PROJECT\"/Future* \"$APP/\")",
+      "Bash(ls \"c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music/\"Future*)"
     ],
     "additionalDirectories": [
       "c:\\Users\\juand\\Documents\\JUAN DIEGO\\PROYECTOS\\Just Music\\Proyecto-Just-Music\\src\\view"
