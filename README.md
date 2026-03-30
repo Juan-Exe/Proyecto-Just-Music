@@ -194,7 +194,7 @@ Si eres titular de derechos y tienes alguna objecion, puedes contactarme directa
 
 ## Autor
 
-Desarrollado por **Juan Diego** como proyecto de portafolio personal.
+Desarrollado por **Juan Diego Arrieta Herrera**.
 
 ---
 

@@ -1,4 +1,11 @@
-# Carpetas de música (demasiado grandes para git)
+# Archivos de música (demasiado grandes para git)
+*.mp3
+*.wav
+*.flac
+*.ogg
+*.m4a
+
+# Carpetas de música
 A$AP Rocky*/
 Deftones*/
 Future*/
