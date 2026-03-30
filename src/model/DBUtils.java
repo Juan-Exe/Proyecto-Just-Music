@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
-import controller.Login_Oyente;
 import controller.viewExampleController_1;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,169 +11,75 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
-/**
- *
- * @author DAMIANA
- */
 public class DBUtils {
-    
-    public boolean singUpUser(ActionEvent event, String correo, String contraseña) throws IOException {
-        
-        boolean registroExitoso = false;
-        
-        Connection connection = null;
-        PreparedStatement psInsert = null;
-        PreparedStatement psCheckUserExists = null;
-        ResultSet resultSet = null; 
-        
-        try{
-            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/just_music", "just_music_user", "justmusic2024" );
-            psCheckUserExists = connection.prepareStatement("SELECT * FROM users WHERE correo = ?");
-            psCheckUserExists.setString(1, correo);
-            resultSet = psCheckUserExists.executeQuery();
-            
-            if (resultSet.isBeforeFirst()) {
-                System.out.println("El usuario ya existe!");
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Just Music");
-                alert.setHeaderText(null);
-                alert.setContentText("Este correo ya está registrado.");
-                alert.getDialogPane().setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #05B2A8; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;");
-                alert.getDialogPane().lookupButton(javafx.scene.control.ButtonType.OK).setStyle("-fx-background-color: #05B2A8; -fx-text-fill: white; -fx-background-radius: 6;");
-                alert.showAndWait();
-                
-            } else {
-                psInsert = connection.prepareStatement("INSERT INTO users (correo, contraseña) VALUES (?, ?)");
-                psInsert.setString(1, correo);
-                psInsert.setString(2, contraseña);
-                psInsert.executeUpdate();
-                
-                
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/viewExampleController_1.fxml"));
-                Parent root = loader.load();
-                viewExampleController_1 controller5 = loader.getController();
-                Scene scene = new Scene(root);
-                Stage stage = new Stage();
-                stage.setScene(scene);
-                stage.sizeToScene();
-        stage.setResizable(false);
-        stage.show();
-                
-                registroExitoso = true;
-                
-            }
-        } catch (SQLException e){
-            e.printStackTrace();
-        } finally {
-            if (resultSet != null) {
-                try {
-                    resultSet.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (psCheckUserExists !=null) {
-                try {
-                    psCheckUserExists.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (psInsert != null) {
-                try {
-                    psInsert.close();
-                } catch (SQLException e) {
-                    
-                }
-            }
-            if (connection != null) {
-                try{
-                    connection.close();
-                }catch (SQLException e){
-                    e.printStackTrace();
-                }
-            }
-        }
-         return registroExitoso;
+
+    // Usuarios hardcodeados: correo -> contraseña
+    private static final Map<String, String> USERS = new HashMap<>();
+
+    static {
+        USERS.put("oyente@justmusic.com", "oyente123");
+        USERS.put("demo@justmusic.com", "demo123");
     }
-    
-    public boolean logInUser(ActionEvent event, String correo, String contraseña) throws IOException {
-        
-        boolean loginExitoso = false;
-        
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet resultSet = null; 
-        
-        try{
-        connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3307/just_music", "just_music_user", "justmusic2024" );
-        preparedStatement = connection.prepareStatement("SELECT contraseña FROM users WHERE correo = ?");
-        preparedStatement.setString(1, correo);
-        resultSet = preparedStatement.executeQuery();
-            
-            if(!resultSet.isBeforeFirst()){
-                System.out.println("User not found in the database");
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Just Music");
-                alert.setHeaderText(null);
-                alert.setContentText("Las credenciales dadas son incorrectas.");
-                alert.getDialogPane().setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #05B2A8; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;");
-                alert.getDialogPane().lookupButton(javafx.scene.control.ButtonType.OK).setStyle("-fx-background-color: #05B2A8; -fx-text-fill: white; -fx-background-radius: 6;");
-                alert.showAndWait();
-            } else {
-                while (resultSet.next()) {
-                    String retrivedPassword = resultSet.getString("contraseña");
-                    
-                    if (retrivedPassword.equals(contraseña)) {
-                        
-                        
-                        
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/viewExampleController_1.fxml"));
-                        Parent root = loader.load();
-                        viewExampleController_1 controller5 = loader.getController();
-                        Scene scene = new Scene(root);
-                        Stage stage = new Stage();
-                        stage.setScene(scene);
-                        stage.sizeToScene();
+
+    public boolean singUpUser(ActionEvent event, String correo, String contraseña) throws IOException {
+        if (USERS.containsKey(correo)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Just Music");
+            alert.setHeaderText(null);
+            alert.setContentText("Este correo ya está registrado.");
+            alert.getDialogPane().setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #05B2A8; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;");
+            alert.getDialogPane().lookupButton(javafx.scene.control.ButtonType.OK).setStyle("-fx-background-color: #05B2A8; -fx-text-fill: white; -fx-background-radius: 6;");
+            alert.showAndWait();
+            return false;
+        }
+
+        USERS.put(correo, contraseña);
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/viewExampleController_1.fxml"));
+        Parent root = loader.load();
+        viewExampleController_1 controller5 = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.sizeToScene();
         stage.setResizable(false);
         stage.show();
-                        
-                        loginExitoso = true;
-                        
-                    } else {
-                        System.out.println("Passwords did not match!");
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setContentText("Las credenciales dadas son incorrectas");
-                        alert.show();
-                    }
-                }
-                
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (resultSet != null){
-                try {
-                    resultSet.close();
-                } catch (SQLException e){
-                    e.printStackTrace();
-                }
-            }
-            if (preparedStatement != null){
-                try {
-                    preparedStatement.close();
-                } catch (SQLException e){
-                    e.printStackTrace();
-                }
-            }
-            if (connection != null){
-                try {
-                    connection.close();
-                }catch (SQLException e){
-                    e.printStackTrace();
-                }
-            }
+        return true;
+    }
+
+    public boolean logInUser(ActionEvent event, String correo, String contraseña) throws IOException {
+        if (!USERS.containsKey(correo)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Just Music");
+            alert.setHeaderText(null);
+            alert.setContentText("Las credenciales dadas son incorrectas.");
+            alert.getDialogPane().setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #05B2A8; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;");
+            alert.getDialogPane().lookupButton(javafx.scene.control.ButtonType.OK).setStyle("-fx-background-color: #05B2A8; -fx-text-fill: white; -fx-background-radius: 6;");
+            alert.showAndWait();
+            return false;
         }
-         return loginExitoso;
+
+        String savedPassword = USERS.get(correo);
+        if (!savedPassword.equals(contraseña)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Just Music");
+            alert.setHeaderText(null);
+            alert.setContentText("Las credenciales dadas son incorrectas.");
+            alert.getDialogPane().setStyle("-fx-background-color: #FFFFFF; -fx-border-color: #05B2A8; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 8;");
+            alert.getDialogPane().lookupButton(javafx.scene.control.ButtonType.OK).setStyle("-fx-background-color: #05B2A8; -fx-text-fill: white; -fx-background-radius: 6;");
+            alert.showAndWait();
+            return false;
+        }
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/viewExampleController_1.fxml"));
+        Parent root = loader.load();
+        viewExampleController_1 controller5 = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.sizeToScene();
+        stage.setResizable(false);
+        stage.show();
+        return true;
     }
 }
