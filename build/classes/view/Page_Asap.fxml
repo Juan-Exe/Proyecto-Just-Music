@@ -49,13 +49,7 @@
             <Image url="@Testing.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="220.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Long%20live%20asap.png" />
-         </image>
-      </ImageView>
       <Button layoutX="40.0" layoutY="412.0" mnemonicParsing="false" onMouseClicked="#Testing" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: transparent;" />
-      <Button layoutX="220.0" layoutY="412.0" mnemonicParsing="false" onMouseClicked="#Long_live_Asap" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: transparent;" />
       <Label layoutX="40.0" layoutY="572.0" prefHeight="17.0" prefWidth="148.0" text="Testing ">
          <font>
             <Font name="Microsoft Sans Serif" size="15.0" />
@@ -71,27 +65,7 @@
             <Font name="Microsoft Sans Serif" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="220.0" layoutY="572.0" text="LONG.LIVE.A$AP ">
-         <font>
-            <Font name="Microsoft Sans Serif" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="220.0" layoutY="572.0" text="LONG.LIVE.A$AP ">
-         <font>
-            <Font name="Microsoft Sans Serif" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="220.0" layoutY="572.0" text="LONG.LIVE.A$AP ">
-         <font>
-            <Font name="Microsoft Sans Serif" size="15.0" />
-         </font>
-      </Label>
       <Label layoutX="40.0" layoutY="592.0" text="2018">
-         <font>
-            <Font name="Microsoft Sans Serif" size="10.0" />
-         </font>
-      </Label>
-      <Label layoutX="220.0" layoutY="592.0" text="2013">
          <font>
             <Font name="Microsoft Sans Serif" size="10.0" />
          </font>

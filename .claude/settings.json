@@ -90,10 +90,12 @@
       "Bash(cp -r \"$PROJECT\"/Future* \"$APP/\")",
       "Bash(ls \"c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music/\"Future*)",
       "Bash(\"C:/Program Files/Java/jdk1.8.0_202/bin/jar\" cvf installer/JustMusic.jar -C build/classes .)",
-      "Bash(xargs grep:*)"
+      "Bash(xargs grep:*)",
+      "Bash(powershell -Command \"Get-ChildItem ''c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music/installer/Just Music/app'' -Directory | ForEach-Object { $size = \\(Get-ChildItem $_.FullName -Recurse | Measure-Object -Property Length -Sum\\).Sum; [PSCustomObject]@{Name=$_.Name; SizeMB=[math]::Round\\($size/1MB,1\\)} } | Sort-Object SizeMB -Descending | Format-Table -AutoSize\")"
     ],
     "additionalDirectories": [
-      "c:\\Users\\juand\\Documents\\JUAN DIEGO\\PROYECTOS\\Just Music\\Proyecto-Just-Music\\src\\view"
+      "c:\\Users\\juand\\Documents\\JUAN DIEGO\\PROYECTOS\\Just Music\\Proyecto-Just-Music\\src\\view",
+      "c:\\Users\\juand\\Documents\\JUAN DIEGO\\PROYECTOS\\Just Music\\Proyecto-Just-Music\\installer\\Just Music\\app"
     ]
   }
 }

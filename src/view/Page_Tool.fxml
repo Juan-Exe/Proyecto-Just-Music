@@ -50,16 +50,7 @@
             <Image url="@Lateralus.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="220.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@10.000%20Days.png" />
-         </image>
-      </ImageView>
       <Button layoutX="40.0" layoutY="412.0" mnemonicParsing="false" onMouseClicked="#Lateralus" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: transparent;">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <Button layoutX="220.0" layoutY="412.0" mnemonicParsing="false" onMouseClicked="#Days" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: transparent;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
@@ -78,27 +69,7 @@
             <Font name="Microsoft Sans Serif" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="220.0" layoutY="572.0" text="10.000 Days ">
-         <font>
-            <Font name="Microsoft Sans Serif" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="220.0" layoutY="572.0" text="10.000 Days ">
-         <font>
-            <Font name="Microsoft Sans Serif" size="15.0" />
-         </font>
-      </Label>
-      <Label layoutX="220.0" layoutY="572.0" text="10.000 Days">
-         <font>
-            <Font name="Microsoft Sans Serif" size="15.0" />
-         </font>
-      </Label>
       <Label layoutX="40.0" layoutY="592.0" text="2001">
-         <font>
-            <Font name="Microsoft Sans Serif" size="10.0" />
-         </font>
-      </Label>
-      <Label layoutX="220.0" layoutY="592.0" text="2006">
          <font>
             <Font name="Microsoft Sans Serif" size="10.0" />
          </font>
