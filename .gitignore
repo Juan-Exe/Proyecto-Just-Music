@@ -1,0 +1,39 @@
+# Carpetas de música (demasiado grandes para git)
+A$AP Rocky*/
+Deftones*/
+Future*/
+Kendrick*/
+Michael*/
+Red Hot*/
+S_C_O_O_T_0_5/
+TOOL*/
+Twenty*/
+
+# Build e instalador
+build/
+dist/
+installer/
+nbproject/private/
+
+# Archivos compilados
+*.class
+*.jar
+
+# NetBeans
+nbproject/private/
+nbproject/Makefile-*.mk
+nbproject/Package-*.bash
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude Code (configuración local del IDE)
+.claude/
+
+# Scripts SQL y Docker (datos locales)
+Script Sql/
+docker/
+docker-compose.yml
+compile.bat

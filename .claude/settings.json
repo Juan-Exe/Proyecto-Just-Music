@@ -79,7 +79,15 @@
       "Bash(ls \"c:\\\\Users\\\\juand\\\\Documents\\\\JUAN DIEGO\\\\PROYECTOS\\\\Just Music\\\\Proyecto-Just-Music\\\\src\\\\view\"\" | grep -i \"png)",
       "Bash(jpg)",
       "Bash(ico \")",
-      "Bash(find 'c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music' -name *.mp3)"
+      "Bash(find 'c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music' -name *.mp3)",
+      "Bash(ls \"C:\\\\Program Files\\\\Eclipse Adoptium\"\" 2>&1 || dir \"C:Program FilesEclipse Adoptium\"\")",
+      "Bash(\"C:/Program Files/Eclipse Adoptium/jdk-25.0.2.10-hotspot/bin/java\" -version)",
+      "Bash(\"C:/Program Files/Eclipse Adoptium/jdk-25.0.2.10-hotspot/bin/jpackage\" --version)",
+      "Bash(\"c:/Program Files/Eclipse Adoptium/jdk-25.0.2.10-hotspot/bin/jpackage\" --type exe --name \"Just Music\" --app-version \"1.0\" --vendor \"Juan Diego\" --description \"Aplicación de streaming de música - Proyecto de portafolio\" --input \"c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music/dist\" --main-jar \"JustMusic.jar\" --runtime-image \"c:/Program Files/Java/jre1.8.0_202\" --dest \"c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music/installer\" --win-dir-chooser --win-shortcut --win-menu)",
+      "Bash(\"c:/Program Files/Eclipse Adoptium/jdk-25.0.2.10-hotspot/bin/jpackage\" --type app-image --name \"Just Music\" --app-version \"1.0\" --vendor \"Juan Diego\" --input \"c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music/dist\" --main-jar \"JustMusic.jar\" --runtime-image \"c:/Program Files/Java/jre1.8.0_202\" --dest \"c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music/installer\")",
+      "Bash(PROJECT=\"c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music\")",
+      "Bash(APP=\"$PROJECT/installer/Just Music/app\")",
+      "Bash(cp -r \"$PROJECT\"/Future* \"$APP/\")"
     ],
     "additionalDirectories": [
       "c:\\Users\\juand\\Documents\\JUAN DIEGO\\PROYECTOS\\Just Music\\Proyecto-Just-Music\\src\\view"
