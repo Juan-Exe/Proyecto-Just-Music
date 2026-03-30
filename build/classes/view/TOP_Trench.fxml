@@ -68,7 +68,7 @@
             <Font name="Microsoft Sans Serif" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="342.0" layoutY="219.0" text="Las canciones convierten los triunfos y los fracasos del cantante en una experiencia compartida.">
+      <Label layoutX="342.0" layoutY="219.0" prefWidth="650.0" wrapText="true" text="Las canciones convierten los triunfos y los fracasos del cantante en una experiencia compartida.">
          <font>
             <Font name="Microsoft Sans Serif" size="12.0" />
          </font>

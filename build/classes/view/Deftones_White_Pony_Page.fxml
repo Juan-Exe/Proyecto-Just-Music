@@ -68,7 +68,7 @@
             <Font name="Microsoft Sans Serif" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="342.0" layoutY="217.0" text="Metal alternativo, nu metal... Sea cual sea el nombre que le demos, White Pony es el disco que definió como ningún otro la mezcla de géneros.">
+      <Label layoutX="342.0" layoutY="217.0" prefWidth="650.0" wrapText="true" text="Metal alternativo, nu metal... Sea cual sea el nombre que le demos, White Pony es el disco que definió como ningún otro la mezcla de géneros.">
          <font>
             <Font name="Microsoft Sans Serif" size="12.0" />
          </font>

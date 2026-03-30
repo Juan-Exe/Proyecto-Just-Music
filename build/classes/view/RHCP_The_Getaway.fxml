@@ -68,7 +68,7 @@
             <Font name="Microsoft Sans Serif" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="342.0" layoutY="234.0" text="Un regreso cargado de melodias relucientes">
+      <Label layoutX="342.0" layoutY="234.0" prefWidth="650.0" wrapText="true" text="Un regreso cargado de melodias relucientes">
          <font>
             <Font name="Microsoft Sans Serif" size="12.0" />
          </font>
