@@ -184,7 +184,7 @@ Las canciones y albums incluidos son propiedad de sus respectivos artistas, comp
 
 ---
 
-## Declaracion de uso justo
+## Fair Use
 
 El uso del contenido musical en este proyecto se enmarca dentro del contexto educativo y demostrativo, sin monetizacion, distribucion publica del audio ni reproduccion masiva. El codigo fuente es el objeto de demostracion; las canciones son unicamente un recurso funcional para simular la experiencia de una plataforma de streaming real.
 
