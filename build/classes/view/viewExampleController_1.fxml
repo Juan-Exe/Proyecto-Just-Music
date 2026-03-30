@@ -235,22 +235,18 @@
                         <Font name="Microsoft Sans Serif" size="15.0" />
                      </font>
                   </Label>
-                  <Button fx:id="Bt_albums" alignment="BASELINE_LEFT" layoutX="27.0" layoutY="201.0" mnemonicParsing="false" onAction="#Page_Ab" prefHeight="39.0" prefWidth="271.0" style="-fx-background-color: transparent;" text=" Albumes" textFill="#5e5858">
+                  <Button fx:id="Bt_albums" alignment="BASELINE_LEFT" layoutX="32.0" layoutY="230.0" mnemonicParsing="false" onAction="#Page_Ab" prefHeight="39.0" prefWidth="271.0" style="-fx-background-color: transparent;" text=" Albumes" textFill="#5e5858">
                      <font>
                         <Font name="Microsoft Sans Serif" size="16.0" />
                      </font>
                      <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@CANCIONES.png" />
-                           </image>
-                        </ImageView>
+                        <Pane prefHeight="18.0" prefWidth="18.0" style="-fx-border-color: #05B2A8; -fx-border-radius: 3; -fx-border-width: 2;" />
                      </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="Bt_art" alignment="BASELINE_LEFT" layoutX="27.0" layoutY="248.0" mnemonicParsing="false" onAction="#Page_Art" prefHeight="39.0" prefWidth="271.0" style="-fx-background-color: transparent;" text=" Artistas" textFill="#5e5858">
+                  <Button fx:id="Bt_art" alignment="BASELINE_LEFT" layoutX="29.0" layoutY="278.0" mnemonicParsing="false" onAction="#Page_Art" prefHeight="39.0" prefWidth="271.0" style="-fx-background-color: transparent;" text=" Artistas" textFill="#5e5858">
                      <font>
                         <Font name="Microsoft Sans Serif" size="16.0" />
                      </font>
@@ -258,19 +254,19 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Artistas.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Label layoutX="28.0" layoutY="300.0" text="Playlist" textFill="#5e5858">
+                  <Label layoutX="28.0" layoutY="325.0" text="Playlist" textFill="#5e5858">
                      <font>
                         <Font name="Microsoft Sans Serif" size="15.0" />
                      </font>
                   </Label>
-                  <Button fx:id="BT_Pls" alignment="BASELINE_LEFT" layoutX="27.0" layoutY="323.0" mnemonicParsing="false" onAction="#Page_plast" prefHeight="39.0" prefWidth="271.0" style="-fx-background-color: transparent;" text=" Todas Las Playlist" textFill="#5e5858">
+                  <Button fx:id="BT_Pls" alignment="BASELINE_LEFT" layoutX="29.0" layoutY="347.0" mnemonicParsing="false" onAction="#Page_plast" prefHeight="39.0" prefWidth="271.0" style="-fx-background-color: transparent;" text="   Todas Las Playlist" textFill="#5e5858">
                      <font>
                         <Font name="Microsoft Sans Serif" size="16.0" />
                      </font>
@@ -278,9 +274,9 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <graphic>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@WhatsApp Image 2024-03-15 at 1.54.17 PM.png" />
+                              <Image url="@WhatsApp Image 2024-03-12 at 12.17.40 PM.jpeg" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -348,11 +344,6 @@
                      </image>
                   </ImageView>
                   <Slider fx:id="volumeSlider" layoutX="744.0" layoutY="33.0" translateX="5.0" value="100.0" />
-                  <Label layoutX="921.0" layoutY="32.0" text="Iniciar Sesión" textFill="WHITE" translateX="10.0">
-                     <font>
-                        <Font name="Microsoft Sans Serif" size="13.0" />
-                     </font>
-                  </Label>
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="956.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@User.png" />

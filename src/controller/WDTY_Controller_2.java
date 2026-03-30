@@ -273,6 +273,7 @@ private void playSong(String songPath, viewExampleController mainController) {
     mediaPlayer = new MediaPlayer(media);
     mainController.setMediaPlayer(mediaPlayer);
     mediaPlayer.play();
+    mainController.setPlayIcon(true);
     mediaPlayer.currentTimeProperty().addListener((obs, oldTime, newTime) -> {
         Platform.runLater(() -> mainController.updateProgressBar(newTime, mediaPlayer.getTotalDuration()));
     });

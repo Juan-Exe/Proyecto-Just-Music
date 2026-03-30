@@ -88,7 +88,9 @@
       "Bash(PROJECT=\"c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music\")",
       "Bash(APP=\"$PROJECT/installer/Just Music/app\")",
       "Bash(cp -r \"$PROJECT\"/Future* \"$APP/\")",
-      "Bash(ls \"c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music/\"Future*)"
+      "Bash(ls \"c:/Users/juand/Documents/JUAN DIEGO/PROYECTOS/Just Music/Proyecto-Just-Music/\"Future*)",
+      "Bash(\"C:/Program Files/Java/jdk1.8.0_202/bin/jar\" cvf installer/JustMusic.jar -C build/classes .)",
+      "Bash(xargs grep:*)"
     ],
     "additionalDirectories": [
       "c:\\Users\\juand\\Documents\\JUAN DIEGO\\PROYECTOS\\Just Music\\Proyecto-Just-Music\\src\\view"
