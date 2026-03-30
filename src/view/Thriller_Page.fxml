@@ -68,7 +68,7 @@
             <Font name="Microsoft Sans Serif" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="342.0" layoutY="232.0" prefWidth="650.0" wrapText="true" text="El álbum que puso a MJ en la estratosfera con un puñado de singles en el top 10.">
+      <Label layoutX="342.0" layoutY="232.0" prefWidth="650.0" wrapText="true" text="El álbum que puso a MJ en la estatrosfera con un puñado de singles en el top 10.">
          <font>
             <Font name="Microsoft Sans Serif" size="12.0" />
          </font>
