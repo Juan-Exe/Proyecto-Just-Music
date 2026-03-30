@@ -78,7 +78,6 @@ Abre el proyecto en NetBeans y ejecuta `ProyectoJustMusic.java`.
 | Artista | Álbum | Año |
 |---------|-------|-----|
 | Tool | Lateralus | 2001 |
-| Tool | 10,000 Days | 2006 |
 | Deftones | White Pony | 2000 |
 | Deftones | Koi No Yokan | 2012 |
 | Kendrick Lamar | DAMN. | 2017 |
@@ -88,7 +87,6 @@ Abre el proyecto en NetBeans y ejecuta `ProyectoJustMusic.java`.
 | Twenty One Pilots | Blurryface | 2015 |
 | Twenty One Pilots | Trench | 2018 |
 | Michael Jackson | Thriller | 1982 |
-| A$AP Rocky | L$D (LONG.LIVE.A$AP) | 2013 |
 | A$AP Rocky | Testing | 2018 |
 | Future & Metro Boomin | We Don't Trust You | 2024 |
 | S_C_O_O_T_0_5 | Lisa - Cover | 2024 |
@@ -105,7 +103,6 @@ Las canciones y álbumes incluidos en esta aplicación son propiedad de sus resp
 
 ### Tool
 - **Lateralus** (2001) — © Tool Dissectional / Volcano Entertainment. Compositores: Maynard James Keenan, Adam Jones, Danny Carey, Justin Chancellor.
-- **10,000 Days** (2006) — © Tool Dissectional / Volcano Entertainment. Compositores: Maynard James Keenan, Adam Jones, Danny Carey, Justin Chancellor.
 
 ### Deftones
 - **White Pony** (2000) — © Maverick Records. Compositores: Chino Moreno, Stephen Carpenter, Chi Cheng, Abe Cunningham, Frank Delgado.
@@ -127,7 +124,6 @@ Las canciones y álbumes incluidos en esta aplicación son propiedad de sus resp
 - **Thriller** (1982) — © Epic Records / MJJ Productions. Productor: Quincy Jones. Compositores: Michael Jackson, Rod Temperton, entre otros.
 
 ### A$AP Rocky
-- **L$D / LONG.LIVE.A$AP** (2013) — © ASAP Worldwide / Polo Grounds Music / RCA Records. Compositor principal: Rakim Athelaston Mayers.
 - **Testing** (2018) — © ASAP Worldwide / Under the Influence of Music / RCA Records. Compositor principal: Rakim Athelaston Mayers.
 
 ### Future & Metro Boomin
