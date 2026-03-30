@@ -13,9 +13,13 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.geometry.Pos;
+import javafx.geometry.Insets;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.application.Platform;
@@ -29,130 +33,120 @@ import javax.swing.JOptionPane;
 public class Days_Controller implements Initializable, AlbumController {
 
     @FXML
-    private Button BT_Vica;
+    private javafx.scene.layout.VBox songListVBox;
     @FXML
-    private Button BT_Jamb;
-    @FXML
-    private Button BT_WFM;
-    @FXML
-    private Button BT_Days;
-    @FXML
-    private Button BT_Pot;
-    @FXML
-    private Button BT_LCjr;
-    @FXML
-    private Button BT_LstKey;
-    @FXML
-    private Button BT_RsttStoned;
-    @FXML
-    private Button BT_Ints;
-    @FXML
-    private Button BT_Ritw;
-    @FXML
-    private Button BT_Vtrss;
+    private ScrollPane songListScroll;
 
-   private viewExampleController mainController;
-   
+    private viewExampleController mainController;
+
     private viewExampleController_1 mainController_1;
-    
+
     private ArrayList<File> songs;
-    
+
     private MediaPlayer mediaPlayer;
-    
+
     private ArrayList<String> songsPaths = new ArrayList<>();
-    
+
     private int currentSongIndex = 0;
-    
+
     private Random random = new Random();
-    
+
     private boolean randomMode = false;
-    
+
     private boolean loopMode = false;
 
     private ImageView songImageView;
-    
+
     private Map<String, String> albumImages = new HashMap<>();
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        
         loadSongs();
-        
-    BT_Vica.setOnAction(event -> playSong(songsPaths.get(0), mainController, mainController_1));
-    
-    BT_Jamb.setOnAction(event -> playSong(songsPaths.get(1), mainController, mainController_1));
-    
-    BT_WFM.setOnAction(event -> playSong(songsPaths.get(2), mainController, mainController_1));
-    
-    BT_Days.setOnAction(event -> playSong(songsPaths.get(3), mainController, mainController_1));
-    
-    BT_Pot.setOnAction(event -> playSong(songsPaths.get(4), mainController, mainController_1));
-    
-    BT_LCjr.setOnAction(event -> playSong(songsPaths.get(5), mainController, mainController_1));
-    
-    BT_LstKey.setOnAction(event -> playSong(songsPaths.get(6), mainController, mainController_1));
-    
-    BT_RsttStoned.setOnAction(event -> playSong(songsPaths.get(7), mainController, mainController_1));
-    
-    BT_Ints.setOnAction(event -> playSong(songsPaths.get(8), mainController, mainController_1));
-    
-    BT_Ritw.setOnAction(event -> playSong(songsPaths.get(9), mainController, mainController_1));
-    
-    BT_Vtrss.setOnAction(event -> playSong(songsPaths.get(10), mainController, mainController_1));  
-    
+        buildSongList();
+        songListScroll.getStylesheets().add(getClass().getResource("/view/scrollbar.css").toExternalForm());
     }
-    
+
+    private void buildSongList() {
+        songListVBox.getChildren().clear();
+        for (int i = 0; i < songsPaths.size(); i++) {
+            final int index = i;
+            String path = songsPaths.get(i);
+            String fileName = new File(path).getName();
+            String songName = fileName.replaceFirst("^\\d+\\s+", "").replaceFirst("\\.mp3$", "");
+            if (songName.contains(" - ")) {
+                songName = songName.substring(songName.indexOf(" - ") + 3);
+            }
+            HBox row = new HBox();
+            row.setPrefWidth(950);
+            row.setPrefHeight(42);
+            row.setAlignment(Pos.CENTER_LEFT);
+            row.setStyle("-fx-background-color: " + (i % 2 == 0 ? "#F0F0F0" : "#FFFFFF") + "; -fx-cursor: hand;");
+            row.setPadding(new Insets(0, 10, 0, 10));
+            Label numLabel = new Label(String.valueOf(i + 1));
+            numLabel.setPrefWidth(40);
+            numLabel.setStyle("-fx-text-fill: #888888; -fx-font-size: 13;");
+            numLabel.setFont(new javafx.scene.text.Font("Microsoft Sans Serif", 13));
+            Label nameLabel = new Label(songName);
+            nameLabel.setStyle("-fx-text-fill: #333333; -fx-font-size: 13;");
+            nameLabel.setFont(new javafx.scene.text.Font("Microsoft Sans Serif", 13));
+            row.getChildren().addAll(numLabel, nameLabel);
+            row.setOnMouseClicked(event -> playSong(songsPaths.get(index), mainController, mainController_1));
+            row.setOnMouseEntered(e -> row.setStyle("-fx-background-color: #05B2A8; -fx-cursor: hand;"));
+            row.setOnMouseExited(e -> row.setStyle("-fx-background-color: " + (index % 2 == 0 ? "#F0F0F0" : "#FFFFFF") + "; -fx-cursor: hand;"));
+            songListVBox.getChildren().add(row);
+        }
+    }
+
     private void loadSongs() {
-        
+
         songsPaths.add("TOOL – 10,000 Days/01 TOOL - Vicarious.mp3");
-    albumImages.put("TOOL – 10,000 Days/01 TOOL - Vicarious.mp3","Mini_Images/10.000 Days Mini");
-    
+    albumImages.put("TOOL – 10,000 Days/01 TOOL - Vicarious.mp3","Mini_Images/10.000 Days Mini.png");
+
     songsPaths.add("TOOL – 10,000 Days/02 TOOL - Jambi.mp3");
-    albumImages.put("TOOL – 10,000 Days/02 TOOL - Jambi.mp3","Mini_Images/10.000 Days Mini");
-    
+    albumImages.put("TOOL – 10,000 Days/02 TOOL - Jambi.mp3","Mini_Images/10.000 Days Mini.png");
+
     songsPaths.add("TOOL – 10,000 Days/03 TOOL - Wings For Marie (Pt 1).mp3");
     albumImages.put("TOOL – 10,000 Days/03 TOOL - Wings For Marie (Pt 1).mp3","Mini_Images/10.000 Days Mini.png");
-    
+
     songsPaths.add("TOOL – 10,000 Days/04 TOOL - 10,000 Days (Wings Pt 2).mp3");
     albumImages.put("TOOL – 10,000 Days/04 TOOL - 10,000 Days (Wings Pt 2).mp3","Mini_Images/10.000 Days Mini.png");
-    
+
     songsPaths.add("TOOL – 10,000 Days/05 TOOL - The Pot.mp3");
     albumImages.put("TOOL – 10,000 Days/05 TOOL - The Pot.mp3","Mini_Images/10.000 Days Mini.png");
-    
+
     songsPaths.add("TOOL – 10,000 Days/06 TOOL - Lipan Conjuring.mp3");
     albumImages.put("TOOL – 10,000 Days/06 TOOL - Lipan Conjuring.mp3","Mini_Images/10.000 Days Mini.png");
-    
+
     songsPaths.add("TOOL – 10,000 Days/07 TOOL - Lost Keys (Blame Hofman).mp3");
     albumImages.put("TOOL – 10,000 Days/07 TOOL - Lost Keys (Blame Hofman).mp3","Mini_Images/10.000 Days Mini.png");
-    
+
     songsPaths.add("TOOL – 10,000 Days/08 TOOL - Rosetta Stoned.mp3");
     albumImages.put("TOOL – 10,000 Days/08 TOOL - Rosetta Stoned.mp3","Mini_Images/10.000 Days Mini.png");
-    
+
     songsPaths.add("TOOL – 10,000 Days/09 TOOL - Intension.mp3");
     albumImages.put("TOOL – 10,000 Days/09 TOOL - Intension.mp3","Mini_Images/10.000 Days Mini.png");
-    
+
     songsPaths.add("TOOL – 10,000 Days/10 TOOL - Right In Two.mp3");
     albumImages.put("TOOL – 10,000 Days/10 TOOL - Right In Two.mp3","Mini_Images/10.000 Days Mini.png");
-    
+
     songsPaths.add("TOOL – 10,000 Days/11 TOOL - Viginti Tres.mp3");
     albumImages.put("TOOL – 10,000 Days/11 TOOL - Viginti Tres.mp3","Mini_Images/10.000 Days Mini.png");
-    
+
     }
-    
-        public void setMediaPlayerVolume(double volume) {
+
+    public void setMediaPlayerVolume(double volume) {
         if (mediaPlayer != null) {
             mediaPlayer.setVolume(volume);
         }
     }
-    
-    
+
+
      private void initializeMediaPlayer() {
 
     if (mediaPlayer != null) {
         mediaPlayer.stop();
     }
-    
+
     String firstSongPath = songsPaths.get(0);
     Media media = new Media(new File(firstSongPath).toURI().toString());
     mediaPlayer = new MediaPlayer(media);
@@ -160,7 +154,7 @@ public class Days_Controller implements Initializable, AlbumController {
         playNextSong();
     });
 }
-     
+
     public void playOrPause() {
      if (mediaPlayer != null) {
         if (mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
@@ -180,8 +174,8 @@ public class Days_Controller implements Initializable, AlbumController {
         }
     }
 }
-     
-     
+
+
     private String getRandomSong() {
       int randomIndex;
     do {
@@ -213,7 +207,7 @@ public class Days_Controller implements Initializable, AlbumController {
 }
 
     public String toggleRandomMode() {
-    randomMode = !randomMode; 
+    randomMode = !randomMode;
 
     String message = randomMode ? "Modo aleatorio activado" : "Modo aleatorio desactivado";
     JOptionPane.showMessageDialog(null, message);
@@ -224,7 +218,7 @@ public class Days_Controller implements Initializable, AlbumController {
         int randomIndex;
         do {
             randomIndex = random.nextInt(songsPaths.size());
-        } while (randomIndex == currentSongIndex); 
+        } while (randomIndex == currentSongIndex);
         return songsPaths.get(randomIndex);
     } else {
 
@@ -240,7 +234,7 @@ public class Days_Controller implements Initializable, AlbumController {
     } else if (mainController_1 != null) {
         playSong(songPath, mainController_1);
     } else {
-  
+
         System.out.println("Error: No se proporcionó ningún controlador válido.");
     }
 }
@@ -269,11 +263,11 @@ private void playSong(String songPath, viewExampleController mainController) {
 
     String[] parts = songPath.split("/");
     String album = parts[0];
-    String songName = parts[1].substring(3); 
-    int songNumber = currentSongIndex + 1; 
-    String albumName = parts[0]; 
+    String songName = parts[1].substring(3);
+    int songNumber = currentSongIndex + 1;
+    String albumName = parts[0];
     mainController.setAlbumLabel(albumName);
-    mainController.setSongLabel(songName); 
+    mainController.setSongLabel(songName);
 
     System.out.println("Reproduciendo canción #" + songNumber + ": " + songName + " del álbum: " + album);
 
@@ -317,11 +311,11 @@ private void playSong(String songPath, viewExampleController_1 mainController_1)
 
     String[] parts = songPath.split("/");
     String album = parts[0];
-    String songName = parts[1].substring(3); 
-    int songNumber = currentSongIndex + 1; 
-    String albumName = parts[0]; 
+    String songName = parts[1].substring(3);
+    int songNumber = currentSongIndex + 1;
+    String albumName = parts[0];
     mainController_1.setAlbumLabel(albumName);
-    mainController_1.setSongLabel(songName); 
+    mainController_1.setSongLabel(songName);
 
     System.out.println("Reproduciendo canción #" + songNumber + ": " + songName + " del álbum: " + album);
 
@@ -342,8 +336,7 @@ private void playSong(String songPath, viewExampleController_1 mainController_1)
 }
 
 
-        
-    
+
 
     public void playPreviousSong() {
     if (isRandomMode()) {
@@ -365,25 +358,25 @@ private void playSong(String songPath, viewExampleController_1 mainController_1)
         playSong(previousSongPath, mainController, mainController_1);
     }
 }
-    
-    
+
+
     public void toggleLoopMode() {
     loopMode = !loopMode;
         System.out.println("modo bucle activado");
     String message = loopMode ? "Modo de bucle activado" : "Modo de bucle desactivado";
     JOptionPane.showMessageDialog(null, message);
 }
-    
+
     public void setMainController(viewExampleController mainController) {
         this.mainController = mainController;
         this.songImageView = mainController.getSongImageView();
-    
+
     }
-    
+
     public void setMainController_1(viewExampleController_1 mainController_1) {
         this.mainController_1 = mainController_1;
         this.songImageView = mainController_1.getSongImageView();
-    
+
     }
-    
+
 }

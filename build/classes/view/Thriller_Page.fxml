@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import java.lang.String?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="642.0" prefWidth="1036.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Thriller_Controller">
+   <stylesheets>
+      <String fx:value="@scrollbar.css" />
+   </stylesheets>
    <children>
       <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="40.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -65,99 +68,15 @@
             <Font name="Microsoft Sans Serif" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="342.0" layoutY="232.0" text="El álbum que puso a MJ en la estatrosfera con un puñado de singles en">
+      <Label layoutX="342.0" layoutY="232.0" text="El álbum que puso a MJ en la estratosfera con un puñado de singles en el top 10.">
          <font>
             <Font name="Microsoft Sans Serif" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="342.0" layoutY="247.0" text="el top 10.">
-         <font>
-            <Font name="Microsoft Sans Serif" size="12.0" />
-         </font>
-      </Label>
-      <VBox layoutX="40.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_WBSS" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   1    Wanna Be Startin' Somethin'" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_BBM" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   2    Baby Be Mine" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_TGIM" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   3   The Girl Is Mine (Ft. Paul McCartney)" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_Th" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   4    Thriller" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
-      <VBox layoutX="339.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_Bit" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   5    Beat It" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_BJ" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   6    Billie Jean " textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_HN" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   7    Human Nature" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_PYT" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   8   P.Y.T. (Pretty Young Thing)" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
-      <VBox layoutX="638.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_TLIML" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   9   The Lady in My Life" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
+      <ScrollPane fx:id="songListScroll" layoutX="40.0" layoutY="351.0" prefHeight="250.0" prefWidth="956.0" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" fitToWidth="true">
+         <content>
+            <VBox fx:id="songListVBox" prefWidth="950.0" />
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import java.lang.String?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="642.0" prefWidth="1036.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Deftones_White_Pony_Controller">
+   <stylesheets>
+      <String fx:value="@scrollbar.css" />
+   </stylesheets>
    <children>
       <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="40.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -65,138 +68,15 @@
             <Font name="Microsoft Sans Serif" size="14.0" />
          </font>
       </Label>
-      <VBox layoutX="40.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_BTS" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   1    Back to School (Mini Maggit)" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_FT" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   2    Feiticeira" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_DB" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   3   Digital Bath" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_Elite" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   4    Elite" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
-      <VBox layoutX="339.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_Rx" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   5    Rx Queen" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_SCrp" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   6    Street Carp" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_Teen" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   7    Teenanger" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_Knife" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   8   Knife Prty" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
-      <VBox layoutX="638.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_Korea" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   9   Korea" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_Pssgr" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   10   Passenger" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_Chg" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   11   Change (In the House of Flies)" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_PM" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   12   Pink Maggit" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
-      <Label layoutX="342.0" layoutY="217.0" text="Metal alternativo, nu metal... Sea cual sea el nombre que le demos, White Pony es el disco que definió como ningún ">
+      <Label layoutX="342.0" layoutY="217.0" text="Metal alternativo, nu metal... Sea cual sea el nombre que le demos, White Pony es el disco que definió como ningún otro la mezcla de géneros.">
          <font>
             <Font name="Microsoft Sans Serif" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="342.0" layoutY="232.0" text="otro la mezcla de géneros y el ángulo experimental del metal del nuevo milenio. Deftones incorpora todo tipo de ">
-         <font>
-            <Font name="Microsoft Sans Serif" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="342.0" layoutY="247.0" text="influencias, desde el rock industrial en “Elite” hasta el beat de trip hop de “Digital Bath”, o unas guitarras que a menudo">
-         <font>
-            <Font name="Microsoft Sans Serif" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="342.0" layoutY="262.0" text="evocan a The Cure. Aunque la banda ya había dado muestras de su ambiciosa visión musical, este álbum captura el ">
-         <font>
-            <Font name="Microsoft Sans Serif" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="342.0" layoutY="277.0" text="momento en el que todo encaja a la perfección.">
-         <font>
-            <Font name="Microsoft Sans Serif" size="12.0" />
-         </font>
-      </Label>
+      <ScrollPane fx:id="songListScroll" layoutX="40.0" layoutY="351.0" prefHeight="250.0" prefWidth="956.0" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" fitToWidth="true">
+         <content>
+            <VBox fx:id="songListVBox" prefWidth="950.0" />
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

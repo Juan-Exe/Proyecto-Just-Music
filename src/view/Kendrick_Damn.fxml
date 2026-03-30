@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import java.lang.String?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="642.0" prefWidth="1036.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Damn_Controller">
+   <stylesheets>
+      <String fx:value="@scrollbar.css" />
+   </stylesheets>
    <children>
       <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="40.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -65,138 +68,20 @@
             <Font name="Microsoft Sans Serif" size="14.0" />
          </font>
       </Label>
-      <VBox layoutX="40.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_BLLD" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   1    BLOOD. " textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_DNA" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   2    DNA." textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_YAH" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   3   YAH." textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_ELMN" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   4    ELEMENT." textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
-      <VBox layoutX="339.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_FLL" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   5    FEEL." textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_LYTY" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   6    LOYALTY. (Ft. Rihanna)" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_PDE" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   7    PRIDE." textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_HBLE" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   8   HUMBLE." textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
-      <VBox layoutX="638.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_LST" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   9   LUST." textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_LVE" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   10   LOVE. (Ft. Zacari)" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_XXX" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   11  XXX. (Ft. U2)" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_FEAR" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   12   FEAR." textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
       <Label layoutX="342.0" layoutY="219.0" text="Directo, complejo y desatado, DAMN. toma su distancia de la directa influencia de jazz y soul de To Pimp a Butterfly y abraza">
          <font>
             <Font name="Microsoft Sans Serif" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="342.0" layoutY="234.0" text="un sonido visceral bajo elementos de trap y R&amp;B en donde caben rimas de seductora arrogancia, como en el tema &quot;DNA&quot;. A">
+      <Label layoutX="342.0" layoutY="234.0" text="un sonido visceral bajo elementos de trap y R&amp;B en donde caben rimas de seductora arrogancia, como en el tema &quot;DNA&quot;.">
          <font>
             <Font name="Microsoft Sans Serif" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="342.0" layoutY="249.0" text="través de versos que caen como bombas sobre un paisaje sonoro, &quot;FEAR&quot; arroja lamentos por la violencia cotidiana.">
-         <font>
-            <Font name="Microsoft Sans Serif" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="342.0" layoutY="264.0" text="Apoyándose en una producción llena de hallazgos, Kendrick Lamar establece un diálogo muy sonoro, tanto con el oyente">
-         <font>
-            <Font name="Microsoft Sans Serif" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="342.0" layoutY="279.0" text="como consigo mismo.">
-         <font>
-            <Font name="Microsoft Sans Serif" size="12.0" />
-         </font>
-      </Label>
+      <ScrollPane fx:id="songListScroll" layoutX="40.0" layoutY="351.0" prefHeight="250.0" prefWidth="956.0" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" fitToWidth="true">
+         <content>
+            <VBox fx:id="songListVBox" prefWidth="950.0" />
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

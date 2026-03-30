@@ -14,9 +14,13 @@ import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.geometry.Pos;
+import javafx.geometry.Insets;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javax.swing.JOptionPane;
@@ -29,43 +33,22 @@ import javax.swing.JOptionPane;
 public class Deftones_White_Pony_Controller implements Initializable, AlbumController {
 
     @FXML
-    private Button BT_BTS;
+    private javafx.scene.layout.VBox songListVBox;
     @FXML
-    private Button BT_FT;
-    @FXML
-    private Button BT_DB;
-    @FXML
-    private Button BT_Chg;
-    @FXML
-    private Button BT_PM;
+    private ScrollPane songListScroll;
 
    private viewExampleController mainController;
-   
+
    private viewExampleController_1 mainController_1;
-    
+
     private ArrayList<File> songs;
-    
+
     private MediaPlayer mediaPlayer;
-    
+
     private ArrayList<String> songsPaths = new ArrayList<>();
-    
+
     private int currentSongIndex = 0;
-    
-    @FXML
-    private Button BT_Elite;
-    @FXML
-    private Button BT_Rx;
-    @FXML
-    private Button BT_SCrp;
-    @FXML
-    private Button BT_Teen;
-    @FXML
-    private Button BT_Knife;
-    @FXML
-    private Button BT_Korea;
-    @FXML
-    private Button BT_Pssgr;
-    
+
     private Random random = new Random();
     private boolean randomMode = false;
     private boolean loopMode = false;
@@ -73,46 +56,48 @@ public class Deftones_White_Pony_Controller implements Initializable, AlbumContr
     private ImageView songImageView;
     private Map<String, String> albumImages = new HashMap<>();
 
-    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-   
-          loadSongs();
+        loadSongs();
+        buildSongList();
+        songListScroll.getStylesheets().add(getClass().getResource("/view/scrollbar.css").toExternalForm());
+    }
 
-          
-        BT_BTS.setOnAction(event -> playSong(songsPaths.get(0), mainController, mainController_1));
-        
-        BT_FT.setOnAction(event -> playSong(songsPaths.get(1), mainController, mainController_1));
-        
-        BT_DB.setOnAction(event -> playSong(songsPaths.get(2), mainController, mainController_1));
-        
-        BT_Elite.setOnAction(event -> playSong(songsPaths.get(3), mainController, mainController_1));
-        
-        BT_Rx.setOnAction(event -> playSong(songsPaths.get(4), mainController, mainController_1));
-        
-        BT_SCrp.setOnAction(event -> playSong(songsPaths.get(5), mainController, mainController_1));
-        
-        BT_Teen.setOnAction(event -> playSong(songsPaths.get(6), mainController, mainController_1));
-        
-        BT_Knife.setOnAction(event -> playSong(songsPaths.get(7), mainController, mainController_1));
-        
-        BT_Korea.setOnAction(event -> playSong(songsPaths.get(8), mainController, mainController_1));
-        
-        BT_Pssgr.setOnAction(event -> playSong(songsPaths.get(9), mainController, mainController_1));
-        
-        BT_Chg.setOnAction(event -> playSong(songsPaths.get(10), mainController, mainController_1));
-        
-        BT_PM.setOnAction(event -> playSong(songsPaths.get(11), mainController, mainController_1));
-        
-        
-        
-    }    
+    private void buildSongList() {
+        songListVBox.getChildren().clear();
+        for (int i = 0; i < songsPaths.size(); i++) {
+            final int index = i;
+            String path = songsPaths.get(i);
+            String fileName = new File(path).getName();
+            String songName = fileName.replaceFirst("^\\d+\\s+", "").replaceFirst("\\.mp3$", "");
+            if (songName.contains(" - ")) {
+                songName = songName.substring(songName.indexOf(" - ") + 3);
+            }
+            HBox row = new HBox();
+            row.setPrefWidth(950);
+            row.setPrefHeight(42);
+            row.setAlignment(Pos.CENTER_LEFT);
+            row.setStyle("-fx-background-color: " + (i % 2 == 0 ? "#F0F0F0" : "#FFFFFF") + "; -fx-cursor: hand;");
+            row.setPadding(new Insets(0, 10, 0, 10));
+            Label numLabel = new Label(String.valueOf(i + 1));
+            numLabel.setPrefWidth(40);
+            numLabel.setStyle("-fx-text-fill: #888888; -fx-font-size: 13;");
+            numLabel.setFont(new javafx.scene.text.Font("Microsoft Sans Serif", 13));
+            Label nameLabel = new Label(songName);
+            nameLabel.setStyle("-fx-text-fill: #333333; -fx-font-size: 13;");
+            nameLabel.setFont(new javafx.scene.text.Font("Microsoft Sans Serif", 13));
+            row.getChildren().addAll(numLabel, nameLabel);
+            row.setOnMouseClicked(event -> playSong(songsPaths.get(index), mainController, mainController_1));
+            row.setOnMouseEntered(e -> row.setStyle("-fx-background-color: #05B2A8; -fx-cursor: hand;"));
+            row.setOnMouseExited(e -> row.setStyle("-fx-background-color: " + (index % 2 == 0 ? "#F0F0F0" : "#FFFFFF") + "; -fx-cursor: hand;"));
+            songListVBox.getChildren().add(row);
+        }
+    }
 
-  
+
     private void loadSongs() {
         
     songsPaths.add("Deftones - White Pony/01 Deftones - Back To School (Mini Maggit).mp3");

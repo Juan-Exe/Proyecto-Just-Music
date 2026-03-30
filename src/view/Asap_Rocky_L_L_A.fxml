@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import java.lang.String?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="642.0" prefWidth="1036.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.L_L_A_Controller">
+   <stylesheets>
+      <String fx:value="@scrollbar.css" />
+   </stylesheets>
    <children>
       <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="50.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -65,113 +68,10 @@
             <Font name="Microsoft Sans Serif" size="14.0" />
          </font>
       </Label>
-      <VBox layoutX="40.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_LLA" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   1   Long Live A$AP" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_Gold" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   2    Goldie" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_PMW" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   3   PMW (All I Really Need) " textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_LVL" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   4    LVL" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
-      <VBox layoutX="339.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_HLL" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   5    Hell" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_Pain" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   6    Pain" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_FkP" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   7    Fuckin' Problems" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_WFTN" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   8   Wild for the Night" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
-      <VBox layoutX="638.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_1T" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   9   1Train" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_FK" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   10   Fashion Killa" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_Phnx" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   11  Phoenix" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_Sddly" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   12   Suddenly" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
+      <ScrollPane fx:id="songListScroll" layoutX="40.0" layoutY="351.0" prefHeight="250.0" prefWidth="956.0" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" fitToWidth="true">
+         <content>
+            <VBox fx:id="songListVBox" prefWidth="950.0" />
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

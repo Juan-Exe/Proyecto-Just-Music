@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import java.lang.String?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="642.0" prefWidth="1036.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Days_Controller">
+   <stylesheets>
+      <String fx:value="@scrollbar.css" />
+   </stylesheets>
    <children>
       <ImageView fitHeight="271.0" fitWidth="271.0" layoutX="40.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -65,105 +68,10 @@
             <Font name="Microsoft Sans Serif" size="14.0" />
          </font>
       </Label>
-      <VBox layoutX="40.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_Vica" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   1   Vicarious" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_Jamb" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   2    Jambi" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_WFM" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   3   Wings For Marie, Pt. 1" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_Days" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   4    10,000 Days (Wings, Pt. 2)" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
-      <VBox layoutX="339.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_Pot" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   5    The Pot" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_LCjr" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   6    Lipan Conjuring" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_LstKey" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   7    Lost Keys (Blame Hofmann)" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_RsttStoned" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   8   Rosetta Stoned" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
-      <VBox layoutX="638.0" layoutY="351.0" prefHeight="225.0" prefWidth="269.0" spacing="19.0">
-         <children>
-            <Button fx:id="BT_Ints" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   9   Intension" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_Ritw" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: #05B2A8; -fx-background-radius: 4;" text="   10   Right in Two" textFill="WHITE">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button fx:id="BT_Vtrss" alignment="BASELINE_LEFT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="42.0" prefWidth="269.0" style="-fx-background-color: D9D9D9; -fx-background-radius: 4;" text="   11  Viginti Tres" textFill="#707070">
-               <font>
-                  <Font name="Microsoft Sans Serif" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </VBox>
+      <ScrollPane fx:id="songListScroll" layoutX="40.0" layoutY="351.0" prefHeight="250.0" prefWidth="956.0" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" fitToWidth="true">
+         <content>
+            <VBox fx:id="songListVBox" prefWidth="950.0" />
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

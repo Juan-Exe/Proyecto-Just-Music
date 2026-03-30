@@ -13,9 +13,13 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.geometry.Pos;
+import javafx.geometry.Insets;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.application.Platform;
@@ -29,86 +33,72 @@ import javax.swing.JOptionPane;
 public class Blurryface_Controller implements Initializable, AlbumController {
 
     @FXML
-    private Button BT_Heavy;
+    private javafx.scene.layout.VBox songListVBox;
     @FXML
-    private Button BT_SO;
-    @FXML
-    private Button BT_Rde;
-    @FXML
-    private Button BT_FrLcl;
-    @FXML
-    private Button BT_TNMH;
-    @FXML
-    private Button BT_LBoy;
-    @FXML
-    private Button BT_TJdg;
-    @FXML
-    private Button BT_Dbut;
-    @FXML
-    private Button BT_Plrz;
-    @FXML
-    private Button BT_WDBTV;
-    @FXML
-    private Button BT_MM;
-    @FXML
-    private Button BT_Htown;
-    
+    private ScrollPane songListScroll;
+
     private viewExampleController mainController;
-   
+
     private viewExampleController_1 mainController_1;
-    
+
     private ArrayList<File> songs;
-    
+
     private MediaPlayer mediaPlayer;
-    
+
     private ArrayList<String> songsPaths = new ArrayList<>();
-    
+
     private int currentSongIndex = 0;
-    
+
     private Random random = new Random();
-    
+
     private boolean randomMode = false;
-    
+
     private boolean loopMode = false;
 
     private ImageView songImageView;
-    
+
     private Map<String, String> albumImages = new HashMap<>();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
         loadSongs();
-        
-    BT_Heavy.setOnAction(event -> playSong(songsPaths.get(0), mainController, mainController_1));
-    
-    BT_SO.setOnAction(event -> playSong(songsPaths.get(1), mainController, mainController_1));
-    
-    BT_Rde.setOnAction(event -> playSong(songsPaths.get(2), mainController, mainController_1));
-    
-    BT_FrLcl.setOnAction(event -> playSong(songsPaths.get(3), mainController, mainController_1));
-    
-    BT_TNMH.setOnAction(event -> playSong(songsPaths.get(4), mainController, mainController_1));
-    
-    BT_LBoy.setOnAction(event -> playSong(songsPaths.get(5), mainController, mainController_1));
-    
-    BT_TJdg.setOnAction(event -> playSong(songsPaths.get(6), mainController, mainController_1));
-    
-    BT_Dbut.setOnAction(event -> playSong(songsPaths.get(7), mainController, mainController_1));
-    
-    BT_Plrz.setOnAction(event -> playSong(songsPaths.get(8), mainController, mainController_1));
-    
-    BT_WDBTV.setOnAction(event -> playSong(songsPaths.get(9), mainController, mainController_1));
-    
-    BT_MM.setOnAction(event -> playSong(songsPaths.get(10), mainController, mainController_1));
-    
-    BT_Htown.setOnAction(event -> playSong(songsPaths.get(11), mainController, mainController_1));
-        
-    
+        buildSongList();
+        songListScroll.getStylesheets().add(getClass().getResource("/view/scrollbar.css").toExternalForm());
     }
-    
+
+    private void buildSongList() {
+        songListVBox.getChildren().clear();
+        for (int i = 0; i < songsPaths.size(); i++) {
+            final int index = i;
+            String path = songsPaths.get(i);
+            String fileName = new File(path).getName();
+            String songName = fileName.replaceFirst("^\\d+\\s+", "").replaceFirst("\\.mp3$", "");
+            if (songName.contains(" - ")) {
+                songName = songName.substring(songName.indexOf(" - ") + 3);
+            }
+            HBox row = new HBox();
+            row.setPrefWidth(950);
+            row.setPrefHeight(42);
+            row.setAlignment(Pos.CENTER_LEFT);
+            row.setStyle("-fx-background-color: " + (i % 2 == 0 ? "#F0F0F0" : "#FFFFFF") + "; -fx-cursor: hand;");
+            row.setPadding(new Insets(0, 10, 0, 10));
+            Label numLabel = new Label(String.valueOf(i + 1));
+            numLabel.setPrefWidth(40);
+            numLabel.setStyle("-fx-text-fill: #888888; -fx-font-size: 13;");
+            numLabel.setFont(new javafx.scene.text.Font("Microsoft Sans Serif", 13));
+            Label nameLabel = new Label(songName);
+            nameLabel.setStyle("-fx-text-fill: #333333; -fx-font-size: 13;");
+            nameLabel.setFont(new javafx.scene.text.Font("Microsoft Sans Serif", 13));
+            row.getChildren().addAll(numLabel, nameLabel);
+            row.setOnMouseClicked(event -> playSong(songsPaths.get(index), mainController, mainController_1));
+            row.setOnMouseEntered(e -> row.setStyle("-fx-background-color: #05B2A8; -fx-cursor: hand;"));
+            row.setOnMouseExited(e -> row.setStyle("-fx-background-color: " + (index % 2 == 0 ? "#F0F0F0" : "#FFFFFF") + "; -fx-cursor: hand;"));
+            songListVBox.getChildren().add(row);
+        }
+    }
+
     private void loadSongs() {
-        
+
     songsPaths.add("Twenty One Pilots – Blurryface/01 Twenty One Pilots - Heavydirtysoul.mp3");
     albumImages.put("Twenty One Pilots – Blurryface/01 Twenty One Pilots - Heavydirtysoul.mp3","Mini_Images/Blurryface Mini.png");
  

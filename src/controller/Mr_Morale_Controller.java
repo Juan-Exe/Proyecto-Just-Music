@@ -13,9 +13,13 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.geometry.Pos;
+import javafx.geometry.Insets;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.application.Platform;
@@ -29,23 +33,9 @@ import javax.swing.JOptionPane;
 public class Mr_Morale_Controller implements Initializable, AlbumController {
 
     @FXML
-    private Button BT_UIGf;
+    private javafx.scene.layout.VBox songListVBox;
     @FXML
-    private Button BT_N95;
-    @FXML
-    private Button BT_Wrld;
-    @FXML
-    private Button BT_DH;
-    @FXML
-    private Button BT_FT;
-    @FXML
-    private Button BT_Rch;
-    @FXML
-    private Button BT_RchSprt;
-    @FXML
-    private Button BT_WCT;
-    @FXML
-    private Button BT_Phrst;
+    private ScrollPane songListScroll;
 
     private viewExampleController mainController;
    
@@ -69,46 +59,44 @@ public class Mr_Morale_Controller implements Initializable, AlbumController {
     
     private Map<String, String> albumImages = new HashMap<>();
     
-    @FXML
-    private Button BT_CMout;
-    @FXML
-    private Button BT_Crown;
-    @FXML
-    private Button BT_SHill;
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
         loadSongs();
-        
-    BT_UIGf.setOnAction(event -> playSong(songsPaths.get(0), mainController, mainController_1));
-    
-    BT_N95.setOnAction(event -> playSong(songsPaths.get(1), mainController, mainController_1));
-    
-    BT_Wrld.setOnAction(event -> playSong(songsPaths.get(2), mainController, mainController_1));
-    
-    BT_DH.setOnAction(event -> playSong(songsPaths.get(3), mainController, mainController_1));
-    
-    BT_FT.setOnAction(event -> playSong(songsPaths.get(4), mainController, mainController_1));
-    
-    BT_Rch.setOnAction(event -> playSong(songsPaths.get(5), mainController, mainController_1));
-    
-    BT_RchSprt.setOnAction(event -> playSong(songsPaths.get(6), mainController, mainController_1));
-    
-    BT_WCT.setOnAction(event -> playSong(songsPaths.get(7), mainController, mainController_1));
-    
-    BT_Phrst.setOnAction(event -> playSong(songsPaths.get(8), mainController, mainController_1));
-    
-    BT_CMout.setOnAction(event -> playSong(songsPaths.get(9), mainController, mainController_1));
-    
-    BT_Crown.setOnAction(event -> playSong(songsPaths.get(10), mainController, mainController_1));
-    
-    BT_SHill.setOnAction(event -> playSong(songsPaths.get(11), mainController, mainController_1));
-        
- 
-        
-    } 
-    
+        buildSongList();
+        songListScroll.getStylesheets().add(getClass().getResource("/view/scrollbar.css").toExternalForm());
+    }
+
+    private void buildSongList() {
+        songListVBox.getChildren().clear();
+        for (int i = 0; i < songsPaths.size(); i++) {
+            final int index = i;
+            String path = songsPaths.get(i);
+            String fileName = new File(path).getName();
+            String songName = fileName.replaceFirst("^\\d+\\s+", "").replaceFirst("\\.mp3$", "");
+            if (songName.contains(" - ")) {
+                songName = songName.substring(songName.indexOf(" - ") + 3);
+            }
+            HBox row = new HBox();
+            row.setPrefWidth(950);
+            row.setPrefHeight(42);
+            row.setAlignment(Pos.CENTER_LEFT);
+            row.setStyle("-fx-background-color: " + (i % 2 == 0 ? "#F0F0F0" : "#FFFFFF") + "; -fx-cursor: hand;");
+            row.setPadding(new Insets(0, 10, 0, 10));
+            Label numLabel = new Label(String.valueOf(i + 1));
+            numLabel.setPrefWidth(40);
+            numLabel.setStyle("-fx-text-fill: #888888; -fx-font-size: 13;");
+            numLabel.setFont(new javafx.scene.text.Font("Microsoft Sans Serif", 13));
+            Label nameLabel = new Label(songName);
+            nameLabel.setStyle("-fx-text-fill: #333333; -fx-font-size: 13;");
+            nameLabel.setFont(new javafx.scene.text.Font("Microsoft Sans Serif", 13));
+            row.getChildren().addAll(numLabel, nameLabel);
+            row.setOnMouseClicked(event -> playSong(songsPaths.get(index), mainController, mainController_1));
+            row.setOnMouseEntered(e -> row.setStyle("-fx-background-color: #05B2A8; -fx-cursor: hand;"));
+            row.setOnMouseExited(e -> row.setStyle("-fx-background-color: " + (index % 2 == 0 ? "#F0F0F0" : "#FFFFFF") + "; -fx-cursor: hand;"));
+            songListVBox.getChildren().add(row);
+        }
+    }
+
     private void loadSongs() {
         
     songsPaths.add("Kendrick Lamar – Mr. Morale & The Big Steppers/01 Kendrick Lamar - United In Grief.mp3");

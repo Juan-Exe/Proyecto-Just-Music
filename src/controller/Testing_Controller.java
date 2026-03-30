@@ -13,9 +13,13 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.geometry.Pos;
+import javafx.geometry.Insets;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.application.Platform;
@@ -29,147 +33,132 @@ import javax.swing.JOptionPane;
 public class Testing_Controller implements Initializable, AlbumController {
 
     @FXML
-    private Button BT_DR;
+    private javafx.scene.layout.VBox songListVBox;
     @FXML
-    private Button BT_AF;
-    @FXML
-    private Button BT_TT;
-    @FXML
-    private Button BT_FKKslp;
-    @FXML
-    private Button BT_PTL;
-    @FXML
-    private Button BT_CLDRP;
-    @FXML
-    private Button BT_BCK;
-    @FXML
-    private Button BT_GNB;
-    @FXML
-    private Button BT_BM;
-    @FXML
-    private Button BT_OG;
-    @FXML
-    private Button BT_Kdss;
-    @FXML
-    private Button BT_HD43;
+    private ScrollPane songListScroll;
 
-   private viewExampleController mainController;
-   
+    private viewExampleController mainController;
+
     private viewExampleController_1 mainController_1;
-    
+
     private ArrayList<File> songs;
-    
+
     private MediaPlayer mediaPlayer;
-    
+
     private ArrayList<String> songsPaths = new ArrayList<>();
-    
+
     private int currentSongIndex = 0;
-    
+
     private Random random = new Random();
-    
+
     private boolean randomMode = false;
-    
+
     private boolean loopMode = false;
 
     private ImageView songImageView;
-    
+
     private Map<String, String> albumImages = new HashMap<>();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
         loadSongs();
-        
-    BT_DR.setOnAction(event -> playSong(songsPaths.get(0), mainController, mainController_1));
-    
-    BT_AF.setOnAction(event -> playSong(songsPaths.get(1), mainController, mainController_1));
-    
-    BT_TT.setOnAction(event -> playSong(songsPaths.get(2), mainController, mainController_1));
-    
-    BT_FKKslp.setOnAction(event -> playSong(songsPaths.get(3), mainController, mainController_1));
-    
-    BT_PTL.setOnAction(event -> playSong(songsPaths.get(4), mainController, mainController_1));
-    
-    BT_CLDRP.setOnAction(event -> playSong(songsPaths.get(5), mainController, mainController_1));
-    
-    BT_BCK.setOnAction(event -> playSong(songsPaths.get(6), mainController, mainController_1));
-    
-    BT_GNB.setOnAction(event -> playSong(songsPaths.get(7), mainController, mainController_1));
-    
-    BT_BM.setOnAction(event -> playSong(songsPaths.get(8), mainController, mainController_1));
-    
-    BT_OG.setOnAction(event -> playSong(songsPaths.get(9), mainController, mainController_1));
-    
-    BT_Kdss.setOnAction(event -> playSong(songsPaths.get(10), mainController, mainController_1));
-    
-    BT_HD43.setOnAction(event -> playSong(songsPaths.get(11), mainController, mainController_1));
-        
-    
+        buildSongList();
+        songListScroll.getStylesheets().add(getClass().getResource("/view/scrollbar.css").toExternalForm());
     }
-    
-    private void loadSongs() {   
-        
-    
+
+    private void buildSongList() {
+        songListVBox.getChildren().clear();
+        for (int i = 0; i < songsPaths.size(); i++) {
+            final int index = i;
+            String path = songsPaths.get(i);
+            String fileName = new File(path).getName();
+            String songName = fileName.replaceFirst("^\\d+\\s+", "").replaceFirst("\\.mp3$", "");
+            if (songName.contains(" - ")) {
+                songName = songName.substring(songName.indexOf(" - ") + 3);
+            }
+            HBox row = new HBox();
+            row.setPrefWidth(950);
+            row.setPrefHeight(42);
+            row.setAlignment(Pos.CENTER_LEFT);
+            row.setStyle("-fx-background-color: " + (i % 2 == 0 ? "#F0F0F0" : "#FFFFFF") + "; -fx-cursor: hand;");
+            row.setPadding(new Insets(0, 10, 0, 10));
+            Label numLabel = new Label(String.valueOf(i + 1));
+            numLabel.setPrefWidth(40);
+            numLabel.setStyle("-fx-text-fill: #888888; -fx-font-size: 13;");
+            numLabel.setFont(new javafx.scene.text.Font("Microsoft Sans Serif", 13));
+            Label nameLabel = new Label(songName);
+            nameLabel.setStyle("-fx-text-fill: #333333; -fx-font-size: 13;");
+            nameLabel.setFont(new javafx.scene.text.Font("Microsoft Sans Serif", 13));
+            row.getChildren().addAll(numLabel, nameLabel);
+            row.setOnMouseClicked(event -> playSong(songsPaths.get(index), mainController, mainController_1));
+            row.setOnMouseEntered(e -> row.setStyle("-fx-background-color: #05B2A8; -fx-cursor: hand;"));
+            row.setOnMouseExited(e -> row.setStyle("-fx-background-color: " + (index % 2 == 0 ? "#F0F0F0" : "#FFFFFF") + "; -fx-cursor: hand;"));
+            songListVBox.getChildren().add(row);
+        }
+    }
+
+    private void loadSongs() {
+
     songsPaths.add("A$AP Rocky – TESTING/01 A$AP Rocky - Distorted Records.mp3");
     albumImages.put("A$AP Rocky – TESTING/01 A$AP Rocky - Distorted Records.mp3","Mini_Images/Testing Mini.png");
-    
+
     songsPaths.add("A$AP Rocky – TESTING/02 A$AP_Rocky_A$AP_Forever_REMIX_feat_Moby,_T_I_Kid_Cudi.mp3");
     albumImages.put("A$AP Rocky – TESTING/02 A$AP_Rocky_A$AP_Forever_REMIX_feat_Moby,_T_I_Kid_Cudi.mp3","Mini_Images/Testing Mini.png");
-    
+
     songsPaths.add("A$AP Rocky – TESTING/03 A$AP Rocky - Tony Tone.mp3");
     albumImages.put("A$AP Rocky – TESTING/03 A$AP Rocky - Tony Tone.mp3","Mini_Images/Testing Mini.png");
-    
+
     songsPaths.add("A$AP Rocky – TESTING/04 A$AP Rocky - Fukk Sleep.mp3");
     albumImages.put("A$AP Rocky – TESTING/04 A$AP Rocky - Fukk Sleep.mp3","Mini_Images/Testing Mini.png");
-    
+
     songsPaths.add("A$AP Rocky – TESTING/05 A$AP Rocky - Praise The Lord (Da Shine).mp3");
     albumImages.put("A$AP Rocky – TESTING/05 A$AP Rocky - Praise The Lord (Da Shine).mp3","Mini_Images/Testing Mini.png");
-    
+
     songsPaths.add("A$AP Rocky – TESTING/06 A$AP Rocky - CALLDROPS.mp3");
     albumImages.put("A$AP Rocky – TESTING/06 A$AP Rocky - CALLDROPS.mp3","Mini_Images/Testing Mini.png");
-    
+
     songsPaths.add("A$AP Rocky – TESTING/07 A$AP Rocky - Buck Shots.mp3");
     albumImages.put("A$AP Rocky – TESTING/07 A$AP Rocky - Buck Shots.mp3","Mini_Images/Testing Mini.png");
-    
+
     songsPaths.add("A$AP Rocky – TESTING/08 A$AP Rocky - Gunz N Butter.mp3");
     albumImages.put("A$AP Rocky – TESTING/08 A$AP Rocky - Gunz N Butter.mp3","Mini_Images/Testing Mini.png");
-    
+
     songsPaths.add("A$AP Rocky – TESTING/09 A$AP Rocky - Brotha Man.mp3");
     albumImages.put("A$AP Rocky – TESTING/09 A$AP Rocky - Brotha Man.mp3","Mini_Images/Testing Mini.png");
-    
+
     songsPaths.add("A$AP Rocky – TESTING/10 A$AP Rocky - OG Beeper.mp3");
     albumImages.put("A$AP Rocky – TESTING/10 A$AP Rocky - OG Beeper.mp3","Mini_Images/Testing Mini.png");
-    
+
     songsPaths.add("A$AP Rocky – TESTING/11 A$AP Rocky - Kids Turned Out Fine.mp3");
     albumImages.put("A$AP Rocky – TESTING/11 A$AP Rocky - Kids Turned Out Fine.mp3","Mini_Images/Testing Mini.png");
-    
+
     songsPaths.add("A$AP Rocky – TESTING/12 A$AP Rocky - Hun43rd.mp3");
     albumImages.put("A$AP Rocky – TESTING/12 A$AP Rocky - Hun43rd.mp3","Mini_Images/Testing Mini.png");
-    
+
     songsPaths.add("A$AP Rocky – TESTING/13 A$AP Rocky - Changes.mp3");
     albumImages.put("A$AP Rocky – TESTING/13 A$AP Rocky - Changes.mp3","Mini_Images/Testing Mini.png");
-    
+
     songsPaths.add("A$AP Rocky – TESTING/14 A$AP Rocky - Black Tux, White Collar.mp3");
     albumImages.put("A$AP Rocky – TESTING/14 A$AP Rocky - Black Tux, White Collar.mp3","Mini_Images/Testing Mini.png");
-    
+
     songsPaths.add("A$AP Rocky – TESTING/15 A$AP Rocky - Purity.mp3");
     albumImages.put("A$AP Rocky – TESTING/15 A$AP Rocky - Purity.mp3","Mini_Images/Testing Mini.png");
-    
+
     }
-    
+
     public void setMediaPlayerVolume(double volume) {
         if (mediaPlayer != null) {
             mediaPlayer.setVolume(volume);
         }
     }
-    
-    
+
+
      private void initializeMediaPlayer() {
 
     if (mediaPlayer != null) {
         mediaPlayer.stop();
     }
-    
+
     String firstSongPath = songsPaths.get(0);
     Media media = new Media(new File(firstSongPath).toURI().toString());
     mediaPlayer = new MediaPlayer(media);
@@ -177,7 +166,7 @@ public class Testing_Controller implements Initializable, AlbumController {
         playNextSong();
     });
 }
-     
+
     public void playOrPause() {
      if (mediaPlayer != null) {
         if (mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
@@ -197,8 +186,8 @@ public class Testing_Controller implements Initializable, AlbumController {
         }
     }
 }
-     
-     
+
+
     private String getRandomSong() {
       int randomIndex;
     do {
@@ -230,7 +219,7 @@ public class Testing_Controller implements Initializable, AlbumController {
 }
 
     public String toggleRandomMode() {
-    randomMode = !randomMode; 
+    randomMode = !randomMode;
 
     String message = randomMode ? "Modo aleatorio activado" : "Modo aleatorio desactivado";
     JOptionPane.showMessageDialog(null, message);
@@ -241,7 +230,7 @@ public class Testing_Controller implements Initializable, AlbumController {
         int randomIndex;
         do {
             randomIndex = random.nextInt(songsPaths.size());
-        } while (randomIndex == currentSongIndex); 
+        } while (randomIndex == currentSongIndex);
         return songsPaths.get(randomIndex);
     } else {
 
@@ -257,7 +246,7 @@ public class Testing_Controller implements Initializable, AlbumController {
     } else if (mainController_1 != null) {
         playSong(songPath, mainController_1);
     } else {
-  
+
         System.out.println("Error: No se proporcionó ningún controlador válido.");
     }
 }
@@ -286,11 +275,11 @@ private void playSong(String songPath, viewExampleController mainController) {
 
     String[] parts = songPath.split("/");
     String album = parts[0];
-    String songName = parts[1].substring(3); 
-    int songNumber = currentSongIndex + 1; 
-    String albumName = parts[0]; 
+    String songName = parts[1].substring(3);
+    int songNumber = currentSongIndex + 1;
+    String albumName = parts[0];
     mainController.setAlbumLabel(albumName);
-    mainController.setSongLabel(songName); 
+    mainController.setSongLabel(songName);
 
     System.out.println("Reproduciendo canción #" + songNumber + ": " + songName + " del álbum: " + album);
 
@@ -334,11 +323,11 @@ private void playSong(String songPath, viewExampleController_1 mainController_1)
 
     String[] parts = songPath.split("/");
     String album = parts[0];
-    String songName = parts[1].substring(3); 
-    int songNumber = currentSongIndex + 1; 
-    String albumName = parts[0]; 
+    String songName = parts[1].substring(3);
+    int songNumber = currentSongIndex + 1;
+    String albumName = parts[0];
     mainController_1.setAlbumLabel(albumName);
-    mainController_1.setSongLabel(songName); 
+    mainController_1.setSongLabel(songName);
 
     System.out.println("Reproduciendo canción #" + songNumber + ": " + songName + " del álbum: " + album);
 
@@ -359,8 +348,7 @@ private void playSong(String songPath, viewExampleController_1 mainController_1)
 }
 
 
-        
-    
+
 
     public void playPreviousSong() {
     if (isRandomMode()) {
@@ -382,26 +370,26 @@ private void playSong(String songPath, viewExampleController_1 mainController_1)
         playSong(previousSongPath, mainController, mainController_1);
     }
 }
-    
-    
+
+
     public void toggleLoopMode() {
     loopMode = !loopMode;
         System.out.println("modo bucle activado");
     String message = loopMode ? "Modo de bucle activado" : "Modo de bucle desactivado";
     JOptionPane.showMessageDialog(null, message);
 }
-    
+
     public void setMainController(viewExampleController mainController) {
         this.mainController = mainController;
         this.songImageView = mainController.getSongImageView();
-    
+
     }
-    
+
     public void setMainController_1(viewExampleController_1 mainController_1) {
         this.mainController_1 = mainController_1;
         this.songImageView = mainController_1.getSongImageView();
-    
+
     }
-    
-    
+
+
 }
